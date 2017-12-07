@@ -14,6 +14,9 @@
 		6F0653241FD9AF8D009C8587 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F0653221FD9AF8D009C8587 /* LaunchScreen.storyboard */; };
 		6F06532F1FD9AF8D009C8587 /* Summer_ExcelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F06532E1FD9AF8D009C8587 /* Summer_ExcelTests.swift */; };
 		6F06533A1FD9AF8D009C8587 /* Summer_ExcelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0653391FD9AF8D009C8587 /* Summer_ExcelUITests.swift */; };
+		6F0653481FD9B07A009C8587 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0653471FD9B07A009C8587 /* Athlete.swift */; };
+		6F06534A1FD9B088009C8587 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0653491FD9B088009C8587 /* Workout.swift */; };
+		6F06534E1FD9B122009C8587 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F06534D1FD9B122009C8587 /* Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		6F0653351FD9AF8D009C8587 /* Summer-ExcelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Summer-ExcelUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0653391FD9AF8D009C8587 /* Summer_ExcelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summer_ExcelUITests.swift; sourceTree = "<group>"; };
 		6F06533B1FD9AF8D009C8587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F0653471FD9B07A009C8587 /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Athlete.swift; path = ../Athlete.swift; sourceTree = "<group>"; };
+		6F0653491FD9B088009C8587 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workout.swift; path = ../Workout.swift; sourceTree = "<group>"; };
+		6F06534D1FD9B122009C8587 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		6F0653181FD9AF8D009C8587 /* Summer-Excel */ = {
 			isa = PBXGroup;
 			children = (
+				6F06534D1FD9B122009C8587 /* Time.swift */,
+				6F0653471FD9B07A009C8587 /* Athlete.swift */,
+				6F0653491FD9B088009C8587 /* Workout.swift */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
 				6F06531B1FD9AF8D009C8587 /* ViewController.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
@@ -260,7 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F06531C1FD9AF8D009C8587 /* ViewController.swift in Sources */,
+				6F0653481FD9B07A009C8587 /* Athlete.swift in Sources */,
+				6F06534E1FD9B122009C8587 /* Time.swift in Sources */,
 				6F06531A1FD9AF8D009C8587 /* AppDelegate.swift in Sources */,
+				6F06534A1FD9B088009C8587 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

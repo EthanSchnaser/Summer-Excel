@@ -25,7 +25,9 @@ class Workout: NSObject {
     var notes: String
     //An optional string of characters the user enters when logging a run.
     
-    init(miles: Double, timeE: Time, theDate: Date, milePace: Double, words: String )
+    var didAttend: Bool
+    
+    init(miles: Double, timeE: Time, theDate: Date, milePace: Double, words: String, attend: Bool )
     {
         
         timeElapsed = timeE
@@ -33,6 +35,7 @@ class Workout: NSObject {
         avgMilePace = milePace
         notes = words
         milesRan = miles
+        didAttend = attend
         
     }
     

@@ -29,6 +29,13 @@ class Athlete: NSObject {
     //Adds a new workout to the workout array
     func addWorkout(new: Workout) {
         workouts.append(new)
+        
+        //Calculates the total miles and assigns it to the toalMiles property
+        var sum = 0.0
+        for one in workouts {
+            sum += one.milesRan
+        }
+        totalMiles = sum
     }
     
     

@@ -103,7 +103,7 @@
 		6F0653181FD9AF8D009C8587 /* Summer-Excel */ = {
 			isa = PBXGroup;
 			children = (
-				FB526BC91FDEF6EB00C32B3D /* New Group */,
+				FB526BC91FDEF6EB00C32B3D /* Functionality Classes */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
 				6F06531B1FD9AF8D009C8587 /* ViewController.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
@@ -132,14 +132,14 @@
 			path = "Summer-ExcelUITests";
 			sourceTree = "<group>";
 		};
-		FB526BC91FDEF6EB00C32B3D /* New Group */ = {
+		FB526BC91FDEF6EB00C32B3D /* Functionality Classes */ = {
 			isa = PBXGroup;
 			children = (
 				6F0653491FD9B088009C8587 /* Workout.swift */,
 				6F0653471FD9B07A009C8587 /* Athlete.swift */,
 				6F06534D1FD9B122009C8587 /* Time.swift */,
 			);
-			name = "New Group";
+			name = "Functionality Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

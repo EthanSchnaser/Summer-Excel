@@ -56,7 +56,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <segue destination="DmF-hA-eXZ" kind="show" id="oeh-g6-RM0"/>
+                                    <segue destination="wnB-0W-0pk" kind="show" id="sLs-1t-r1C"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -182,7 +182,4 @@
             <point key="canvasLocation" x="917.60000000000002" y="123.68815592203899"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="oeh-g6-RM0"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -62,12 +62,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1178" y="-127"/>
+            <point key="canvasLocation" x="-1178" y="-137"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="dFC-FG-Qe5">
             <objects>
-                <viewController id="4Q5-JY-ebO" sceneMemberID="viewController">
+                <viewController id="4Q5-JY-ebO" customClass="TeamDataView" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OnV-MO-9Pc"/>
                         <viewControllerLayoutGuide type="bottom" id="mSc-26-Mz4"/>
@@ -86,7 +86,7 @@
         <!--Item-->
         <scene sceneID="TiY-1O-dlu">
             <objects>
-                <viewController id="yTj-TO-sJT" sceneMemberID="viewController">
+                <viewController id="yTj-TO-sJT" customClass="PersonalDataView" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rqH-iT-ehJ"/>
                         <viewControllerLayoutGuide type="bottom" id="sMU-9C-E64"/>
@@ -105,7 +105,7 @@
         <!--Item 1-->
         <scene sceneID="SMz-fU-iDh">
             <objects>
-                <viewController id="DmF-hA-eXZ" sceneMemberID="viewController">
+                <viewController id="DmF-hA-eXZ" customClass="HomepageView" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9GR-qg-pHG"/>
                         <viewControllerLayoutGuide type="bottom" id="W82-aa-YOU"/>

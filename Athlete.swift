@@ -15,22 +15,22 @@ class Athlete: NSObject {
     var thisGrade: Int
     var workouts = [Workout]()
     var totalMiles: Double
-    var totalTime: Time
+    var totalTime = Time(sec: 0, min: 0, hou: 0)
     var attendance: Int
+    var totalPace = Time(sec: 0, min: 0, hou: 0)
     
     init(name: String, grade: Int) {
         thisName = name
         thisGrade = grade
         totalMiles = 0
         attendance = 0
-        totalTime = Time(sec: 0, min: 0, hou: 0)
     }
     
     //Adds a new workout to the workout array
     func addWorkout(new: Workout) {
         workouts.append(new)
         
-        //Calculates the total miles and minutes and assigns it to the properties
+        //Calculates the total miles, minutes, and attendance and assigns it to the properties
         var sumMiles = 0.0
         let sumTime = Time(sec: 0, min: 0, hou: 0)
         var sumAttendance = 0
@@ -44,6 +44,9 @@ class Athlete: NSObject {
         totalMiles = sumMiles
         totalTime = sumTime
         attendance = sumAttendance
+        
+        //Calculates overall pace
+        
     }
     
     

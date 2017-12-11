@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
-        <!--View Controller-->
+        <!--PopUPVC-->
         <scene sceneID="rhx-jl-cxT">
             <objects>
-                <viewController id="9ll-bG-atM" sceneMemberID="viewController">
+                <viewController id="9ll-bG-atM" userLabel="PopUPVC" customClass="AddTeamatePopUp" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vRT-M4-laN"/>
                         <viewControllerLayoutGuide type="bottom" id="crk-qs-xZp"/>
@@ -84,6 +84,9 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="ClosePopUp:" destination="9ll-bG-atM" eventType="touchUpInside" id="uNv-Vp-nZc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

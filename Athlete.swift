@@ -30,12 +30,15 @@ class Athlete: NSObject {
     func addWorkout(new: Workout) {
         workouts.append(new)
         
-        //Calculates the total miles and assigns it to the toalMiles property
-        var sum = 0.0
+        //Calculates the total miles and minutes and assigns it to the properties
+        var sumMiles = 0.0
+        let sumTime = Time(sec: 0, min: 0, hou: 0)
         for one in workouts {
-            sum += one.milesRan
+            sumMiles += one.milesRan
+            sumTime.addTime(time2: one.timeElapsed)
         }
-        totalMiles = sum
+        totalMiles = sumMiles
+        totalTime = sumTime
     }
     
     

@@ -55,6 +55,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <segue destination="wnB-0W-0pk" kind="show" id="sLs-1t-r1C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,12 +65,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1178" y="-127"/>
+            <point key="canvasLocation" x="-1178" y="-137"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="dFC-FG-Qe5">
             <objects>
-                <viewController id="4Q5-JY-ebO" sceneMemberID="viewController">
+                <viewController id="4Q5-JY-ebO" customClass="TeamDataView" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OnV-MO-9Pc"/>
                         <viewControllerLayoutGuide type="bottom" id="mSc-26-Mz4"/>
@@ -83,10 +86,29 @@
             </objects>
             <point key="canvasLocation" x="-226" y="-515"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="TiY-1O-dlu">
+            <objects>
+                <viewController id="yTj-TO-sJT" customClass="PersonalDataView" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rqH-iT-ehJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="sMU-9C-E64"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4nP-P9-hal">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="kja-d1-Csl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qu7-RL-7Qy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="-1867"/>
+        </scene>
         <!--Item 1-->
         <scene sceneID="SMz-fU-iDh">
             <objects>
-                <viewController id="DmF-hA-eXZ" sceneMemberID="viewController">
+                <viewController id="DmF-hA-eXZ" customClass="HomepageView" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9GR-qg-pHG"/>
                         <viewControllerLayoutGuide type="bottom" id="W82-aa-YOU"/>
@@ -114,16 +136,17 @@
                     <connections>
                         <segue destination="DmF-hA-eXZ" kind="relationship" relationship="viewControllers" id="X4Z-HC-Abc"/>
                         <segue destination="4Q5-JY-ebO" kind="relationship" relationship="viewControllers" id="AYi-pG-8ku"/>
+                        <segue destination="yTj-TO-sJT" kind="relationship" relationship="viewControllers" id="EKv-fj-UNE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEg-Ge-9ea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1178" y="-843"/>
         </scene>
-        <!--View Controller-->
+        <!--PopUPVC-->
         <scene sceneID="rhx-jl-cxT">
             <objects>
-                <viewController id="9ll-bG-atM" sceneMemberID="viewController">
+                <viewController id="9ll-bG-atM" userLabel="PopUPVC" customClass="AddTeamatePopUp" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vRT-M4-laN"/>
                         <viewControllerLayoutGuide type="bottom" id="crk-qs-xZp"/>
@@ -146,6 +169,9 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="ClosePopUp:" destination="9ll-bG-atM" eventType="touchUpInside" id="uNv-Vp-nZc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

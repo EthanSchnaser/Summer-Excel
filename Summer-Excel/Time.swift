@@ -55,5 +55,17 @@ class Time: NSObject {
         }
         return result
     }
+    
+    //Divides the time object by a double using floating point arithmetic
+    func divideTime(number: Double) -> Time
+    {
+        let Result = Time(sec: seconds, min: minutes, hou: hours)
+        let num = Int(number)
+        Result.seconds = seconds/num
+        Result.minutes = minutes/num
+        Result.hours = hours/num
+        return Result
+        
+    }
 
 }

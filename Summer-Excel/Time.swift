@@ -2,7 +2,7 @@
 //  Time.swift
 //  Summer-Excel
 //
-//  Created by SCHNASER, ETHAN on 12/7/17.
+//  Created by SCHNASER, ETHAN; MARSHALL, MAX; and ABBOTT, JAKE on 12/7/17.
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 
@@ -54,6 +54,18 @@ class Time: NSObject {
             result = hou + "hours" + min + "minutes" + sec + "seconds"
         }
         return result
+    }
+    
+    //Divides the time object by a double using floating point arithmetic
+    func divideTime(number: Double) -> Time
+    {
+        let Result = Time(sec: seconds, min: minutes, hou: hours)
+        let num = Int(number)
+        Result.seconds = seconds/num
+        Result.minutes = minutes/num
+        Result.hours = hours/num
+        return Result
+        
     }
 
 }

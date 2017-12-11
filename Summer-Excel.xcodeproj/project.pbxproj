@@ -18,6 +18,9 @@
 		6F0653481FD9B07A009C8587 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0653471FD9B07A009C8587 /* Athlete.swift */; };
 		6F06534A1FD9B088009C8587 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0653491FD9B088009C8587 /* Workout.swift */; };
 		6F06534E1FD9B122009C8587 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F06534D1FD9B122009C8587 /* Time.swift */; };
+		6F521C871FDEFAA200474EE6 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C861FDEFAA200474EE6 /* HomepageView.swift */; };
+		6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */; };
+		6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		6F0653471FD9B07A009C8587 /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Athlete.swift; path = ../Athlete.swift; sourceTree = "<group>"; };
 		6F0653491FD9B088009C8587 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workout.swift; path = ../Workout.swift; sourceTree = "<group>"; };
 		6F06534D1FD9B122009C8587 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		6F521C861FDEFAA200474EE6 /* HomepageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
+		6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
+		6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +111,9 @@
 		6F0653181FD9AF8D009C8587 /* Summer-Excel */ = {
 			isa = PBXGroup;
 			children = (
-				6F06534D1FD9B122009C8587 /* Time.swift */,
-				6F0653471FD9B07A009C8587 /* Athlete.swift */,
-				6F0653491FD9B088009C8587 /* Workout.swift */,
+				6F521C8C1FDF029500474EE6 /* View Controller Files */,
+				FB526BC91FDEF6EB00C32B3D /* New Group */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
-				6F06531B1FD9AF8D009C8587 /* ViewController.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
 				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
 				57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */,
@@ -135,6 +139,27 @@
 				6F06533B1FD9AF8D009C8587 /* Info.plist */,
 			);
 			path = "Summer-ExcelUITests";
+			sourceTree = "<group>";
+		};
+		6F521C8C1FDF029500474EE6 /* View Controller Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F06531B1FD9AF8D009C8587 /* ViewController.swift */,
+				6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */,
+				6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */,
+				6F521C861FDEFAA200474EE6 /* HomepageView.swift */,
+			);
+			name = "View Controller Files";
+			sourceTree = "<group>";
+		};
+		FB526BC91FDEF6EB00C32B3D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				6F0653491FD9B088009C8587 /* Workout.swift */,
+				6F0653471FD9B07A009C8587 /* Athlete.swift */,
+				6F06534D1FD9B122009C8587 /* Time.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */,
+				6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */,
+				6F521C871FDEFAA200474EE6 /* HomepageView.swift in Sources */,
 				6F06531C1FD9AF8D009C8587 /* ViewController.swift in Sources */,
 				6F0653481FD9B07A009C8587 /* Athlete.swift in Sources */,
 				57C0BFD71FDEF8EF001FD4A6 /* AddTeamatePopUp.swift in Sources */,

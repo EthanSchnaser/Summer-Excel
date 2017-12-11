@@ -2,7 +2,7 @@
 //  Athlete.swift
 //  Summer-Excel
 //
-//  Created by SCHNASER, ETHAN on 12/7/17.
+//  Created by SCHNASER, ETHAN; MARSHALL, MAX; and ABBOTT, JAKE on 12/7/17.
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 
@@ -33,12 +33,17 @@ class Athlete: NSObject {
         //Calculates the total miles and minutes and assigns it to the properties
         var sumMiles = 0.0
         let sumTime = Time(sec: 0, min: 0, hou: 0)
+        var sumAttendance = 0
         for one in workouts {
             sumMiles += one.milesRan
             sumTime.addTime(time2: one.timeElapsed)
+            if one.didAttend {
+                sumAttendance += 1
+            }
         }
         totalMiles = sumMiles
         totalTime = sumTime
+        attendance = sumAttendance
     }
     
     

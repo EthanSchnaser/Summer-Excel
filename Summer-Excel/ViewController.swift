@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Summer-Excel
 //
-//  Created by SCHNASER, ETHAN on 12/7/17.
+//  Created by SCHNASER, ETHAN; MARSHALL, MAX; and ABBOTT, JAKE on 12/7/17.
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 

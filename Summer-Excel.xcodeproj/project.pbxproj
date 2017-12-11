@@ -103,9 +103,7 @@
 		6F0653181FD9AF8D009C8587 /* Summer-Excel */ = {
 			isa = PBXGroup;
 			children = (
-				6F06534D1FD9B122009C8587 /* Time.swift */,
-				6F0653471FD9B07A009C8587 /* Athlete.swift */,
-				6F0653491FD9B088009C8587 /* Workout.swift */,
+				FB526BC91FDEF6EB00C32B3D /* New Group */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
 				6F06531B1FD9AF8D009C8587 /* ViewController.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
@@ -132,6 +130,16 @@
 				6F06533B1FD9AF8D009C8587 /* Info.plist */,
 			);
 			path = "Summer-ExcelUITests";
+			sourceTree = "<group>";
+		};
+		FB526BC91FDEF6EB00C32B3D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				6F0653491FD9B088009C8587 /* Workout.swift */,
+				6F0653471FD9B07A009C8587 /* Athlete.swift */,
+				6F06534D1FD9B122009C8587 /* Time.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,6 +527,7 @@
 				6F0653401FD9AF8D009C8587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F0653411FD9AF8D009C8587 /* Build configuration list for PBXNativeTarget "Summer-ExcelTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +536,7 @@
 				6F0653431FD9AF8D009C8587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F0653441FD9AF8D009C8587 /* Build configuration list for PBXNativeTarget "Summer-ExcelUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +545,7 @@
 				6F0653461FD9AF8D009C8587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

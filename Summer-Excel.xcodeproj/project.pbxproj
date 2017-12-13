@@ -111,7 +111,8 @@
 		6F0653181FD9AF8D009C8587 /* Summer-Excel */ = {
 			isa = PBXGroup;
 			children = (
-				FB526BC91FDEF6EB00C32B3D /* Functionality Classes */,
+				6F521C8C1FDF029500474EE6 /* View Controller Files */,
+				FB526BC91FDEF6EB00C32B3D /* New Group */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
 				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
@@ -140,7 +141,18 @@
 			path = "Summer-ExcelUITests";
 			sourceTree = "<group>";
 		};
-		FB526BC91FDEF6EB00C32B3D /* Functionality Classes */ = {
+		6F521C8C1FDF029500474EE6 /* View Controller Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F06531B1FD9AF8D009C8587 /* ViewController.swift */,
+				6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */,
+				6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */,
+				6F521C861FDEFAA200474EE6 /* HomepageView.swift */,
+			);
+			name = "View Controller Files";
+			sourceTree = "<group>";
+		};
+		FB526BC91FDEF6EB00C32B3D /* New Group */ = {
 			isa = PBXGroup;
 			children = (
 				6F0653491FD9B088009C8587 /* Workout.swift */,

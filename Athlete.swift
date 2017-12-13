@@ -10,6 +10,7 @@ import UIKit
 
 class Athlete: NSObject {
     
+    
     //All the Athlete properties are found here
     var thisName: String
     var thisGrade: Int
@@ -19,36 +20,48 @@ class Athlete: NSObject {
     var attendance: Int
     var totalPace = Time(sec: 0, min: 0, hou: 0)
     
+    
     init(name: String, grade: Int) {
+        
         thisName = name
         thisGrade = grade
         totalMiles = 0
         attendance = 0
+        
     }
+    
     
     //Adds a new workout to the workout array
     func addWorkout(new: Workout) {
+        
         workouts.append(new)
         
-        //Calculates the total miles, minutes, and attendance and assigns it to the properties
+        //Calculates the total miles, minutes, attendance, and pace and assigns it to the properties
         var sumMiles = 0.0
         let sumTime = Time(sec: 0, min: 0, hou: 0)
         var sumAttendance = 0
+        let sumPace = Time(sec: 0, min: 0, hou: 0)
         for one in workouts {
             sumMiles += one.milesRan
             sumTime.addTime(time2: one.timeElapsed)
             if one.didAttend {
                 sumAttendance += 1
             }
+            sumPace.addTime(time2: one.timeElapsed)
         }
         totalMiles = sumMiles
         totalTime = sumTime
         attendance = sumAttendance
         
-        //Calculates overall pace
+    }
+    
+    
+    func weeklyTotals(day: Date) {
+        
+        //finds the weekday of the Date object
+        let weekday = Calendar.current.component(.weekday, from: day)
         
     }
     
     
-
 }

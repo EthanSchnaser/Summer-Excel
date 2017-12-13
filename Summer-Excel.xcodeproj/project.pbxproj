@@ -159,7 +159,7 @@
 				6F0653471FD9B07A009C8587 /* Athlete.swift */,
 				6F06534D1FD9B122009C8587 /* Time.swift */,
 			);
-			name = "New Group";
+			name = "Functionality Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

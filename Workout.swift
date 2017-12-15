@@ -16,7 +16,7 @@ class Workout: NSObject {
     var timeElapsed: Time
     //Time it took to run miles entered(in minutes). Default: nil
     
-    var Date: Date
+    var date: Date
     //The user is able to choose the date in which to log their workout
     
     var avgMilePace: Time
@@ -31,7 +31,7 @@ class Workout: NSObject {
     {
         
         timeElapsed = timeE
-        Date = theDate
+        date = theDate
         avgMilePace = timeE.divideTime(number: miles)
         notes = words
         milesRan = miles

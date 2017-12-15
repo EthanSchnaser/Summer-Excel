@@ -59,8 +59,9 @@ class Athlete: NSObject {
     func weeklyTotals(day: Date) {
         
         //finds the weekday of the Date object
-        let weekday = Calendar.current.component(.weekday, from: day)
+        let weekday = Calendar.current.component(.weekday, from: day) - 1
         
+    
     }
     
     

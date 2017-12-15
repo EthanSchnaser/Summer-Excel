@@ -20,7 +20,15 @@ class AddTeamatePopUp: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    var x = 10
+    //var Aname = (firstName+ lastName)
+    
     @IBAction func ClosePopUp(_ sender: Any) {
+        
+       let newAthlete =  Athlete(name: ("Jake"), grade: x)
         
         dismiss(animated: true, completion: nil)
     }

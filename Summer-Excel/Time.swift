@@ -10,18 +10,31 @@ import UIKit
 
 class Time: NSObject {
     //Integer that represents the seconds of the time the time object is representing
-    var seconds = 0
+    var seconds = 0.0
     //Integer that represents the minutes of the time the time object is representing
-    var minutes = 0
+    var minutes = 0.0
     //Integer that represents the hours of the time the time object is representing
-    var hours = 0
+    var hours = 0.0
     
     //Initializes the seconds, minutes and hours of the time object
-    init(sec: Int, min: Int, hou: Int)
+    init(sec: Double, min: Double, hou: Double)
     {
         seconds = sec
         minutes = min
         hours = hou
+    }
+    
+    init(min: Double)
+    {
+        seconds = min * 60.0
+        minutes = min
+        if(minutes < 60)
+        {
+            hours = 0.0
+        }
+        else{
+            hours = minutes/60
+        }
     }
     //This function will allow a time object to have another time object's instance variables added with their own
     //parameters: time2 = time object that will be added to the object being used to call.
@@ -60,7 +73,7 @@ class Time: NSObject {
     func divideTime(number: Double) -> Time
     {
         let Result = Time(sec: seconds, min: minutes, hou: hours)
-        let num = Int(number)
+        let num = number
         Result.seconds = seconds/num
         Result.minutes = minutes/num
         Result.hours = hours/num

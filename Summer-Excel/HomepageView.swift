@@ -26,11 +26,5 @@ class HomepageView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func log() -> Workout
-    {
-        let time = Double(minutesTextField.text!)!
-        let logMiles = Double(milesTextField.text!)!
-        let logTime = Time(min: time)
-        let newWorkout = Workout(miles: logMiles, timeE: logTime, theDate: Date(), milePace: <#T##Double#>, words: <#T##String#>, attend: <#T##Bool#>)
-    }
+
 }

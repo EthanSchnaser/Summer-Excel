@@ -7,6 +7,13 @@
 //
 
 import UIKit
+
+var teamArray: [Athlete] = []
+func sortAlpha()
+{
+    
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

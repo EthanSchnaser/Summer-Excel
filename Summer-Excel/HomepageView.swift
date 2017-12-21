@@ -16,13 +16,18 @@ class HomepageView: UIViewController {
     @IBOutlet weak var attendanceInput: UISwitch!
     
     @IBAction func pressEnter(_ sender: Any) {
+        //casts the buttons to usable variables
         let theseMiles = Double(mileInput.text!)
         let theseMinutes = Int(minuteInput.text!)
+        let thisTime = Time(min: theseMinutes!)
         let theseNotes = notesInput.text
-        let attend = attendanceInput.isOn
+        let attended = attendanceInput.isOn
         
-        //let thisTime = Time(min: Double)
-        //let thisWorkout = Workout(miles: theseMiles, timeE: Time, theDate: <#T##Date#>, words: <#T##String#>, attend: <#T##Bool#>)
+        //creates the workout for this log
+        let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended)
+        
+        
+        
     }
     
     }

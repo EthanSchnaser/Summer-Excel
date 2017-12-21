@@ -36,7 +36,7 @@ class Athlete: NSObject {
         
         workouts.append(new)
         
-        //Calculates the total miles, minutes, attendance, and pace and assigns it to the properties
+        //Calculates the total miles, time, attendance, and pace and assigns it to the properties
         var sumMiles = 0.0
         let sumTime = Time(sec: 0, min: 0, hou: 0)
         var sumAttendance = 0
@@ -56,10 +56,31 @@ class Athlete: NSObject {
     }
     
     
-    func weeklyTotals(day: Date) {
+    func weeklyTotals(day: Date) -> (Double, Time, Int, Time) {
         
-        //finds the weekday of the Date object
-        let weekday = Calendar.current.component(.weekday, from: day)
+        //finds the weekday of the Date object and the date of the previous sunday and next saturday
+        let weekday = Calendar.current.component(.weekday, from: day) - 1
+        let sunday = Date(timeInterval: TimeInterval(86400 * (-(weekday + 1))), since: day)
+        let saturday = Date(timeInterval: TimeInterval(86400 * (6-weekday)), since: day)
+        
+        //Calculates the total weekly miles, time, attendance, and pace
+        var sumMiles = 0.0
+        let sumTime = Time(sec: 0, min: 0, hou: 0)
+        var sumAttendance = 0
+        let sumPace = Time(sec: 0, min: 0, hou: 0)
+        for each in workouts {
+            if (each.date < saturday) && (each.date < sunday) {
+                sumMiles += each.milesRan
+                sumTime.addTime(time2: each.timeElapsed)
+                if each.didAttend {
+                    sumAttendance += 1
+                }
+                sumPace.addTime(time2: each.avgMilePace)
+            }
+        }
+        
+        //Return a tuple of all the weekly totals
+        return (sumMiles, sumTime, sumAttendance, sumPace)
         
     }
     

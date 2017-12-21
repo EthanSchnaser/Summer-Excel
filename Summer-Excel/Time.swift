@@ -23,6 +23,19 @@ class Time: NSObject {
         minutes = min
         hours = hou
     }
+    
+    init(min: Int)
+    {
+        seconds = min * 60
+        minutes = min
+        if(minutes < 60)
+        {
+            hours = 0
+        }
+        else{
+            hours = minutes/60
+        }
+    }
     //This function will allow a time object to have another time object's instance variables added with their own
     //parameters: time2 = time object that will be added to the object being used to call.
     //return: none

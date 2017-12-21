@@ -6,6 +6,10 @@
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 
+
+var theTeam: [Athlete] = []
+//Global array
+
 import UIKit
 
 @UIApplicationMain

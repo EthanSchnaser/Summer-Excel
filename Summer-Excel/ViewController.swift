@@ -8,7 +8,6 @@
 
 import UIKit
 
-var teamArray: [Athlete] = []
 func sortAlpha()
 {
     

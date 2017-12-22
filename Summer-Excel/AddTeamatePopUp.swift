@@ -35,6 +35,8 @@ class AddTeamatePopUp: UIViewController {
         
         print(theTeam[0].thisName)
         
+        
+        
     }
 
 }

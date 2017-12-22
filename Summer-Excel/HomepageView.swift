@@ -25,7 +25,7 @@ class HomepageView: UIViewController {
         
         //creates the workout for this log
         let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended)
-        */
+ */
         
         
     }

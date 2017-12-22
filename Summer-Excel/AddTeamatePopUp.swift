@@ -32,7 +32,6 @@ class AddTeamatePopUp: UIViewController {
     
     @IBAction func pressNine(_ sender: Any) {
         
-        
     }
     
     @IBAction func pressTen(_ sender: Any) {

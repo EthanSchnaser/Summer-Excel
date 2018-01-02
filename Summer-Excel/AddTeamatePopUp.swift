@@ -25,6 +25,24 @@ class AddTeamatePopUp: UIViewController {
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var gradeNine: UIButton!
+    @IBOutlet weak var gradeTen: UIButton!
+    @IBOutlet weak var gradeEleven: UIButton!
+    @IBOutlet weak var gradeTwelve: UIButton!
+    
+    @IBAction func pressNine(_ sender: Any) {
+        
+    }
+    
+    @IBAction func pressTen(_ sender: Any) {
+    }
+    
+    @IBAction func pressEleven(_ sender: Any) {
+    }
+    
+    @IBAction func pressTwelve(_ sender: Any) {
+    }
+    
     
     @IBAction func addTeamate(_ sender: Any) {
         let athleteName = firstName.text! + " " + lastName.text!
@@ -34,6 +52,8 @@ class AddTeamatePopUp: UIViewController {
         theTeam.append(newAthlete)
         
         print(theTeam[0].thisName)
+        
+        dismiss(animated: true, completion: nil)
         
     }
 

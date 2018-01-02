@@ -472,7 +472,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFv-uD-SnE">
-                                <rect key="frame" x="29.5" y="208.5" width="316" height="250"/>
+                                <rect key="frame" x="30" y="209" width="316" height="250"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6gJ-xs-Muk">
                                         <rect key="frame" x="0.0" y="0.0" width="316" height="250"/>
@@ -506,7 +506,7 @@
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yE-1a-faM">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yE-1a-faM">
                                         <rect key="frame" x="105" y="31" width="83" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
@@ -519,6 +519,9 @@
                                         <state key="normal" title="9">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressNine:" destination="9ll-bG-atM" eventType="touchUpInside" id="e3m-lC-uh7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLy-TL-U94">
                                         <rect key="frame" x="152" y="124" width="46" height="30"/>
@@ -526,6 +529,9 @@
                                         <state key="normal" title="10">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressTen:" destination="9ll-bG-atM" eventType="touchUpInside" id="0d6-tH-4yI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUV-70-cmN">
                                         <rect key="frame" x="206" y="124" width="46" height="30"/>
@@ -533,6 +539,9 @@
                                         <state key="normal" title="11">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressEleven:" destination="9ll-bG-atM" eventType="touchUpInside" id="cKU-pY-nwC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35u-o2-AG6">
                                         <rect key="frame" x="262" y="124" width="46" height="30"/>
@@ -540,8 +549,11 @@
                                         <state key="normal" title="12">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressTwelve:" destination="9ll-bG-atM" eventType="touchUpInside" id="98l-S0-nu7"/>
+                                        </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IHi-wk-NCJ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IHi-wk-NCJ">
                                         <rect key="frame" x="196" y="31" width="104" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
@@ -571,6 +583,10 @@
                     </view>
                     <connections>
                         <outlet property="firstName" destination="2yE-1a-faM" id="W8x-ta-C4Z"/>
+                        <outlet property="gradeEleven" destination="lUV-70-cmN" id="ci8-8u-5hM"/>
+                        <outlet property="gradeNine" destination="Sue-U4-1EH" id="KJS-uW-ffa"/>
+                        <outlet property="gradeTen" destination="aLy-TL-U94" id="ef7-Rf-sxm"/>
+                        <outlet property="gradeTwelve" destination="35u-o2-AG6" id="qTj-ZV-ppQ"/>
                         <outlet property="lastName" destination="IHi-wk-NCJ" id="UIj-qC-hec"/>
                     </connections>
                 </viewController>

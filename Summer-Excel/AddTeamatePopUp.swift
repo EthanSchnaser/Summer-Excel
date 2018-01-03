@@ -29,7 +29,8 @@ class AddTeamatePopUp: UIViewController {
     @IBOutlet weak var gradeTen: UIButton!
     @IBOutlet weak var gradeEleven: UIButton!
     @IBOutlet weak var gradeTwelve: UIButton!
-    var alert = UIAlertView()
+    var alert = UIAlertController()
+    
     
     @IBAction func pressNine(_ sender: Any) {
         gradeNine.isSelected = true
@@ -60,18 +61,23 @@ class AddTeamatePopUp: UIViewController {
     }
     
     
+    
     @IBAction func addTeamate(_ sender: Any) {
         let athleteName = firstName.text! + " " + lastName.text!
         var gradeSelected = 0
         
+        alert.title = "Please Enter a First and Last Name"
+        let dismissAction = UIAlertAction(title: "dismiss", style: UIAlertActionStyle.default, handler: { (dismissAction) in
+            self.alert.dismiss(animated: true, completion: nil)
+        })
+        
+        alert.addAction(dismissAction)
         if (firstName.text == "") || (lastName.text == ""){
-            alert.title = "Please Enter a First and Last Name"
-            alert.addButton(withTitle: "Dismiss")
-            alert.show()
-            alert.dismiss(withClickedButtonIndex: 0, animated: true)
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
+        alert.title = "Please Select a Grade"
         if gradeNine.isSelected {
             gradeSelected = 9
         } else if gradeTen.isSelected {
@@ -81,10 +87,7 @@ class AddTeamatePopUp: UIViewController {
         } else if gradeTwelve.isSelected {
             gradeSelected = 12
         } else {
-            alert.title = "Please Select a Grade"
-            alert.addButton(withTitle: "Dismiss")
-            alert.show()
-            alert.dismiss(withClickedButtonIndex: 0, animated: true)
+            self.present(alert, animated: true, completion: nil)
             return
         }
         

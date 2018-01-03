@@ -35,9 +35,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return theTeam.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        excelLogHeader.text = theTeam[row].thisName
-    }
+    //func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+      //  excelLogHeader.text = theTeam[row].thisName
+    //}
     
     
     

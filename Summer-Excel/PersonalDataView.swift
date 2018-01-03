@@ -8,5 +8,7 @@
 
 import UIKit
 
-class PersonalDataView: UIViewController {
+
+
+class PersonalDataView: UIViewController{
     }

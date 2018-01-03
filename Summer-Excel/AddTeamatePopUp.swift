@@ -8,16 +8,32 @@
 
 import UIKit
 
-class AddTeamatePopUp: UIViewController {
+class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var firstTextField: UITextField!
+    @IBOutlet weak var secondTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.firstTextField.delegate = self
+        self.secondTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Hide Keyboard when user touches outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //Presses return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        firstTextField.resignFirstResponder()
+        secondTextField.resignFirstResponder()
+        return true
     }
 
     //Check to make sure they have entered something

@@ -33,6 +33,12 @@ class SortingPopUpViewController: UIViewController {
     }
     */
 
+    @IBAction func closePopUp3(_ sender: Any) {
+        self.view.removeFromSuperview()
+    }
+    @IBAction func closePopUp2(_ sender: Any) {
+        self.view.removeFromSuperview()
+    }
     @IBAction func closePopUp(_ sender: Any) {
         self.view.removeFromSuperview()
     }

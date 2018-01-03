@@ -270,6 +270,9 @@
                                         <rect key="frame" x="73" y="46" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Average Pace"/>
+                                        <connections>
+                                            <action selector="closePopUp:" destination="88N-JX-9Xb" eventType="touchUpInside" id="pAy-UY-jy0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4N-zE-2V8">
                                         <rect key="frame" x="68" y="8" width="105" height="30"/>
@@ -283,6 +286,9 @@
                                         <rect key="frame" x="69" y="90" width="103" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Total Mileage"/>
+                                        <connections>
+                                            <action selector="closePopUp3:" destination="88N-JX-9Xb" eventType="touchUpInside" id="zdH-3X-BAr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

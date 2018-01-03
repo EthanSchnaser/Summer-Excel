@@ -597,11 +597,13 @@
                     </view>
                     <connections>
                         <outlet property="firstName" destination="2yE-1a-faM" id="W8x-ta-C4Z"/>
+                        <outlet property="firstTextField" destination="2yE-1a-faM" id="deS-N8-Dyt"/>
                         <outlet property="gradeEleven" destination="lUV-70-cmN" id="ci8-8u-5hM"/>
                         <outlet property="gradeNine" destination="Sue-U4-1EH" id="KJS-uW-ffa"/>
                         <outlet property="gradeTen" destination="aLy-TL-U94" id="ef7-Rf-sxm"/>
                         <outlet property="gradeTwelve" destination="35u-o2-AG6" id="qTj-ZV-ppQ"/>
                         <outlet property="lastName" destination="IHi-wk-NCJ" id="UIj-qC-hec"/>
+                        <outlet property="secondTextField" destination="IHi-wk-NCJ" id="SnS-EN-cUn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkk-VJ-fLU" userLabel="First Responder" sceneMemberID="firstResponder"/>

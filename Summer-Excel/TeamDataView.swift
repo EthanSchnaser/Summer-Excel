@@ -18,7 +18,7 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.default , reuseIdentifier: "cell")
-        cell.textLabel?.text = theTeam[0].thisName
+        cell.textLabel?.text = theTeam[indexPath.row].thisName
         return(cell)
     }
     @IBAction func showPopUp(_ sender: Any) {

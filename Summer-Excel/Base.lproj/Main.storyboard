@@ -28,11 +28,6 @@
                                 <color key="textColor" red="0.10290860601336738" green="0.51269429152284396" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-YX-h8t">
-                                <rect key="frame" x="0.0" y="151" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.102908606" green="0.51269429150000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUm-XF-OYg">
                                 <rect key="frame" x="125" y="470" width="124" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -59,9 +54,22 @@
                                     <segue destination="9ll-bG-atM" kind="presentation" id="HjA-0B-AaH"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-YX-h8t">
+                                <rect key="frame" x="0.0" y="151" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xjD-gd-c9C"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0c5-zh-4HC"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="athletePickerView" destination="7aZ-YX-h8t" id="XRs-qP-28A"/>
+                        <outlet property="excelLogHeader" destination="2M4-wP-pRG" id="hr9-h9-iS2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,6 +278,9 @@
                                         <rect key="frame" x="73" y="46" width="95" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Average Pace"/>
+                                        <connections>
+                                            <action selector="closePopUp:" destination="88N-JX-9Xb" eventType="touchUpInside" id="pAy-UY-jy0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4N-zE-2V8">
                                         <rect key="frame" x="68" y="8" width="105" height="30"/>
@@ -283,6 +294,9 @@
                                         <rect key="frame" x="69" y="90" width="103" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Total Mileage"/>
+                                        <connections>
+                                            <action selector="closePopUp3:" destination="88N-JX-9Xb" eventType="touchUpInside" id="zdH-3X-BAr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -590,11 +604,13 @@
                     <connections>
                         <outlet property="addTeammate" destination="QFr-Mb-1jB" id="QRx-OV-aHm"/>
                         <outlet property="firstName" destination="2yE-1a-faM" id="W8x-ta-C4Z"/>
+                        <outlet property="firstTextField" destination="2yE-1a-faM" id="deS-N8-Dyt"/>
                         <outlet property="gradeEleven" destination="lUV-70-cmN" id="ci8-8u-5hM"/>
                         <outlet property="gradeNine" destination="Sue-U4-1EH" id="KJS-uW-ffa"/>
                         <outlet property="gradeTen" destination="aLy-TL-U94" id="ef7-Rf-sxm"/>
                         <outlet property="gradeTwelve" destination="35u-o2-AG6" id="qTj-ZV-ppQ"/>
                         <outlet property="lastName" destination="IHi-wk-NCJ" id="UIj-qC-hec"/>
+                        <outlet property="secondTextField" destination="IHi-wk-NCJ" id="SnS-EN-cUn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkk-VJ-fLU" userLabel="First Responder" sceneMemberID="firstResponder"/>

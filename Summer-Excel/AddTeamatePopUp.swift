@@ -23,20 +23,28 @@ class AddTeamatePopUp: UIViewController {
     //Check to make sure they have entered something
     
     
+    @IBOutlet weak var addTeammate: UIButton!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var gradeNine: UIButton!
     @IBOutlet weak var gradeTen: UIButton!
     @IBOutlet weak var gradeEleven: UIButton!
     @IBOutlet weak var gradeTwelve: UIButton!
-    var alert = UIAlertController()
     
+    @IBAction func editFirst(_ sender: Any) {
+        enabled()
+    }
+    
+    @IBAction func editLast(_ sender: Any) {
+        enabled()
+    }
     
     @IBAction func pressNine(_ sender: Any) {
         gradeNine.isSelected = true
         gradeTen.isSelected = false
         gradeEleven.isSelected = false
         gradeTwelve.isSelected = false
+        enabled()
     }
     
     @IBAction func pressTen(_ sender: Any) {
@@ -44,6 +52,7 @@ class AddTeamatePopUp: UIViewController {
         gradeTen.isSelected = true
         gradeEleven.isSelected = false
         gradeTwelve.isSelected = false
+        enabled()
     }
     
     @IBAction func pressEleven(_ sender: Any) {
@@ -51,6 +60,7 @@ class AddTeamatePopUp: UIViewController {
         gradeTen.isSelected = false
         gradeEleven.isSelected = true
         gradeTwelve.isSelected = false
+        enabled()
     }
     
     @IBAction func pressTwelve(_ sender: Any) {
@@ -58,26 +68,16 @@ class AddTeamatePopUp: UIViewController {
         gradeTen.isSelected = false
         gradeEleven.isSelected = false
         gradeTwelve.isSelected = true
+        enabled()
     }
     
     
     
-    @IBAction func addTeamate(_ sender: Any) {
+    @IBAction func addTeammate(_ sender: Any) {
         let athleteName = firstName.text! + " " + lastName.text!
         var gradeSelected = 0
         
-        alert.title = "Please Enter a First and Last Name"
-        let dismissAction = UIAlertAction(title: "dismiss", style: UIAlertActionStyle.default, handler: { (dismissAction) in
-            self.alert.dismiss(animated: true, completion: nil)
-        })
         
-        alert.addAction(dismissAction)
-        if (firstName.text == "") || (lastName.text == ""){
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        
-        alert.title = "Please Select a Grade"
         if gradeNine.isSelected {
             gradeSelected = 9
         } else if gradeTen.isSelected {
@@ -86,9 +86,6 @@ class AddTeamatePopUp: UIViewController {
             gradeSelected = 11
         } else if gradeTwelve.isSelected {
             gradeSelected = 12
-        } else {
-            self.present(alert, animated: true, completion: nil)
-            return
         }
         
         let newAthlete = Athlete(name: athleteName, grade: gradeSelected)
@@ -99,5 +96,10 @@ class AddTeamatePopUp: UIViewController {
         
     }
     
+    func enabled() {
+        if (gradeNine.isSelected || gradeTen.isSelected || gradeEleven.isSelected || gradeTwelve.isSelected) && firstName.hasText && lastName.hasText {
+            addTeammate.isEnabled = true
+        }
+    }
 
 }

@@ -376,7 +376,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic3-vP-dVl">
-                                        <rect key="frame" x="216" y="8" width="140" height="30"/>
+                                        <rect key="frame" x="200" y="8" width="156" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Change Teammate">
@@ -452,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljW-ob-lug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="-825"/>
+            <point key="canvasLocation" x="664.79999999999995" y="-825.33733133433293"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="afb-1j-c1A">
@@ -580,6 +580,16 @@
                                             <action selector="editLast:" destination="9ll-bG-atM" eventType="editingChanged" id="YfJ-ld-RD7"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wJ-yQ-xTF">
+                                        <rect key="frame" x="8" y="0.0" width="69" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelPopUp:" destination="9ll-bG-atM" eventType="touchUpInside" id="kJO-w4-fm6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -615,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkk-VJ-fLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1879" y="-199"/>
+            <point key="canvasLocation" x="-1879.2" y="-199.25037481259372"/>
         </scene>
     </scenes>
 </document>

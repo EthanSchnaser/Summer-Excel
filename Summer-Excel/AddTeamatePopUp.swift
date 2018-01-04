@@ -87,6 +87,9 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
         enabled()
     }
     
+    @IBAction func cancelPopUp(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     @IBAction func addTeammate(_ sender: Any) {

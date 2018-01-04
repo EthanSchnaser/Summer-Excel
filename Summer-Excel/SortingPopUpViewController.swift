@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class SortingPopUpViewController: UIViewController {
+var tableViewNum = 0
+class SortingPopUpViewController: TeamDataView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,5 +41,28 @@ class SortingPopUpViewController: UIViewController {
     }
     @IBAction func closePopUp(_ sender: Any) {
         self.view.removeFromSuperview()
+        var tmpArray: Array = [""]
+        for i in stride(from: 0, to: theTeam.count, by: 1)
+        {
+            tmpArray.append(theTeam[i].thisName)
+        }
+        tmpArray.sort()
+        for i in stride(from: 0, to: theTeam.count, by: 1)
+        {
+            let store = tmpArray[i]
+            for j in stride(from: 0, to: theTeam.count, by: 1)
+            {
+                if (store == theTeam[j].thisName)
+                {
+                    let use = theTeam.remove(at: j)
+                    theTeam.insert(use, at:i)
+                }
+            }
+        }
+        for i in stride(from: 0, to: tmpArray.count, by: 1)
+        {
+            print(tmpArray[i])
+        }
+        super.tableView.reloadData()
     }
 }

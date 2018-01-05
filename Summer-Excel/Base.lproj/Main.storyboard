@@ -230,23 +230,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sGT-ij-cYR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Y6-v7-oWv">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="fdr-pu-mo8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="lPo-ZY-k1E">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fdr-pu-mo8" id="02S-L8-0Jr">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lPo-ZY-k1E" id="lfZ-OY-bBC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="yTj-TO-sJT" id="Q5g-tT-ceo"/>
-                                    <outlet property="delegate" destination="yTj-TO-sJT" id="dGQ-dX-7IU"/>
+                                    <outlet property="dataSource" destination="yTj-TO-sJT" id="YbV-5v-brI"/>
+                                    <outlet property="delegate" destination="yTj-TO-sJT" id="XhK-fu-Xbf"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -254,63 +254,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Team" id="kja-d1-Csl"/>
                     <connections>
-                        <outlet property="tableView" destination="sGT-ij-cYR" id="Fbz-E2-fz6"/>
+                        <outlet property="tView" destination="3Y6-v7-oWv" id="7ko-Qf-GYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu7-RL-7Qy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-473" y="-1617"/>
-        </scene>
-        <!--Sorting Pop Up View Controller-->
-        <scene sceneID="xnc-vZ-3UC">
-            <objects>
-                <viewController storyboardIdentifier="sbPopUpID" id="88N-JX-9Xb" customClass="SortingPopUpViewController" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HOL-Fb-e9n"/>
-                        <viewControllerLayoutGuide type="bottom" id="K8H-Ci-elJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eCU-xp-3Er">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xeu-Bk-qsV">
-                                <rect key="frame" x="67" y="244" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-s2-Nda">
-                                        <rect key="frame" x="73" y="46" width="95" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Average Pace"/>
-                                        <connections>
-                                            <action selector="closePopUp:" destination="88N-JX-9Xb" eventType="touchUpInside" id="pAy-UY-jy0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4N-zE-2V8">
-                                        <rect key="frame" x="68" y="8" width="105" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Alphabetically"/>
-                                        <connections>
-                                            <action selector="closePopUp:" destination="88N-JX-9Xb" eventType="touchUpInside" id="5fm-2F-rsu"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-fx-FYF">
-                                        <rect key="frame" x="69" y="90" width="103" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Total Mileage"/>
-                                        <connections>
-                                            <action selector="closePopUp3:" destination="88N-JX-9Xb" eventType="touchUpInside" id="zdH-3X-BAr"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l3p-Wq-t07" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="288.80000000000001" y="-1619.6401799100452"/>
+            <point key="canvasLocation" x="-474.39999999999998" y="-1617.8410794602701"/>
         </scene>
         <!--Homepage-->
         <scene sceneID="SMz-fU-iDh">

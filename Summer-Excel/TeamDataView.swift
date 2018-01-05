@@ -9,7 +9,9 @@
 import UIKit
 
 class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var tableView: UITableView!
+    
+    var tView: UITableView?
+    var cellReuseIdentifier = "cell"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,17 +25,25 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         cell.textLabel?.text = theTeam[indexPath.row].thisName
+        tView = tableView
         return(cell)
     }
     
     @IBAction func showPopUp(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! SortingPopUpViewController
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+        var int = 0
+        if int <= 0
+        {
+        theTeam = theTeam.sorted(by:({$0.thisName < $1.thisName}))
+        tView?.reloadData()
+        print(tView)
+        int+=1
+        }
+        else if int == 1
+        {
+        theTeam = theTeam.sorted(by:({$0.thisName < $1.thisName}))
+        }
     }
     
     }

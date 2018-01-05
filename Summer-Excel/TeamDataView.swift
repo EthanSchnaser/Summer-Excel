@@ -37,13 +37,23 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
         {
         theTeam = theTeam.sorted(by:({$0.thisName < $1.thisName}))
         tView?.reloadData()
-        print(tView)
-        int+=1
+        int = 1
         }
-        else if int == 1
+        if int > 0 && int < 2
         {
-        theTeam = theTeam.sorted(by:({$0.thisName < $1.thisName}))
+        theTeam = theTeam.sorted(by:({$0.totalMiles < $1.totalMiles}))
+        tView?.reloadData()
+        int = int + 1
+        print(int)
         }
+        if int >= 2
+        {
+        theTeam = theTeam.sorted(by:({$0.thisGrade < $1.thisGrade}))
+        tView?.reloadData()
+        int = int + 1
+        print(int)
+        }
+        
     }
     
     }

@@ -60,6 +60,5 @@ class SortingPopUpViewController: UIViewController {
                 }
             }
         }
-        TeamDataView.tableView.reloadData()
     }
 }

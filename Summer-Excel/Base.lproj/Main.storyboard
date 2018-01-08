@@ -245,6 +245,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Team" id="kja-d1-Csl"/>
+                    <connections>
+                        <outlet property="tableView" destination="sGT-ij-cYR" id="4kW-vq-luu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu7-RL-7Qy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -121,7 +121,6 @@
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
 				6F5BC35E1FFBFCDF00007AB0 /* SortingPopUpViewController.swift */,
 				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
-				57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */,
 				6F0653221FD9AF8D009C8587 /* LaunchScreen.storyboard */,
 				6F0653251FD9AF8D009C8587 /* Info.plist */,
 			);
@@ -153,6 +152,7 @@
 				6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */,
 				6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */,
 				6F521C861FDEFAA200474EE6 /* HomepageView.swift */,
+				57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */,
 			);
 			name = "View Controller Files";
 			sourceTree = "<group>";

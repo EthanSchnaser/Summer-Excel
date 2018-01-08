@@ -14,6 +14,18 @@ class HomepageView: UIViewController {
     @IBOutlet weak var minuteInput: UITextField!
     @IBOutlet weak var notesInput: UITextView!
     @IBOutlet weak var attendanceInput: UISwitch!
+    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var dateInput: UITextField!
+    
+    @IBAction func milesEdited(_ sender: Any) {
+        enabled()
+    }
+    
+    @IBAction func minutesEdited(_ sender: Any) {
+        enabled()
+    }
+    
+    
     
     @IBAction func pressEnter(_ sender: Any) {
         //casts the buttons to usable variables
@@ -29,5 +41,15 @@ class HomepageView: UIViewController {
         
         
     }
+    
+    func enabled() {
+        if (mileInput.hasText && minuteInput.hasText) {
+            enterButton.isEnabled = true
+        } else {
+            enterButton.isEnabled = false
+        }
+    }
+    
+    
     
     }

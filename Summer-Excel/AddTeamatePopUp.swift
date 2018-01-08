@@ -119,6 +119,8 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
     func enabled() {
         if (gradeNine.isSelected || gradeTen.isSelected || gradeEleven.isSelected || gradeTwelve.isSelected) && firstName.hasText && lastName.hasText {
             addTeammate.isEnabled = true
+        } else {
+            addTeammate.isEnabled = false
         }
     }
 

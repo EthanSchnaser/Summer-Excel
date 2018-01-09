@@ -39,7 +39,6 @@ class HomepageView: UIViewController {
         let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended)
  
         
-        
     }
     
     func enabled() {
@@ -50,6 +49,12 @@ class HomepageView: UIViewController {
         }
     }
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.date
+        dateInput.inputView = datePicker
+        
+    }
     
     }

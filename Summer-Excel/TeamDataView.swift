@@ -8,12 +8,15 @@
 
 import UIKit
 
-class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    @IBOutlet weak var sortButton: UIBarButtonItem! = UIBarButtonItem()
     var tView: UITableView?
     var cellReuseIdentifier = "cell"
+    var int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(sortButton)
 
     }
     
@@ -32,26 +35,29 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     @IBAction func showPopUp(_ sender: Any) {
-        var int = 0
         if int <= 0
         {
-        theTeam = theTeam.sorted(by:({$0.thisName < $1.thisName}))
-        tView?.reloadData()
+        theTeam = theTeam.sorted(by:({$0.totalMiles < $1.totalMiles}))
         int = 1
+        tView?.reloadData()
+        print("Total Miles")
+        return
         }
+        
         if int > 0 && int < 2
         {
-        theTeam = theTeam.sorted(by:({$0.totalMiles < $1.totalMiles}))
+        theTeam = theTeam.sorted(by:({$0.thisGrade > $1.thisGrade}))
         tView?.reloadData()
-        int = int + 1
-        print(int)
+        int = 2
+        print("Grade Level")
+        return
         }
-        if int >= 2
-        {
-        theTeam = theTeam.sorted(by:({$0.thisGrade < $1.thisGrade}))
+        else{
+        theTeam = theTeam.sorted(by:({$0.totalPace.seconds > $1.totalPace.seconds}))
+        int = 0
         tView?.reloadData()
-        int = int + 1
-        print(int)
+        print("Average Pace")
+        return
         }
         
     }

@@ -254,6 +254,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Team" id="kja-d1-Csl"/>
                     <connections>
+                        <outlet property="sortButton" destination="tYe-Vf-T3C" id="vKf-Fx-cBJ"/>
                         <outlet property="tView" destination="3Y6-v7-oWv" id="7ko-Qf-GYu"/>
                     </connections>
                 </viewController>

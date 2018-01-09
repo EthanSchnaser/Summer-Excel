@@ -32,7 +32,11 @@ class Workout: NSObject {
         
         timeElapsed = timeE
         date = theDate
-        avgMilePace = timeE.divideTime(number: miles)
+        if miles != 0.0 {
+            avgMilePace = timeE.divideTime(number: miles)
+        } else {
+            avgMilePace = Time(min: 0)
+        }
         notes = words
         milesRan = miles
         didAttend = attend

@@ -90,7 +90,8 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func addTeammate(_ sender: Any) {
-        firstName.text?.prefix(1).capitalized
+        firstName.text = firstName.text?.prefix(1).capitalized
+        firstName.text = lastName.text?.prefix(1).capitalized
         let athleteName = firstName.text! + " " + lastName.text!
         var gradeSelected = 0
         

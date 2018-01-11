@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SortingPopUpViewController: UIViewController {
+class SortingPopUpViewController: TeamDataView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,25 +40,9 @@ class SortingPopUpViewController: UIViewController {
         self.view.removeFromSuperview()
     }
     @IBAction func closePopUp(_ sender: Any) {
+
+        theTeam = theTeam.sorted(by: ({$0.thisName < $1.thisName}))
+        super.reload()
         self.view.removeFromSuperview()
-        let length = theTeam.count
-        var tmpArray: Array = [""]
-        for i in stride(from: 0, to: length, by: 1)
-        {
-            tmpArray.append(theTeam[i].thisName)
-        }
-        tmpArray.sort()
-        for i in stride(from: 0, to: length, by: 1)
-        {
-            let store = theTeam[i].thisName
-            for i in stride(from: 0, to: length, by: 1)
-            {
-                if (store == tmpArray[i])
-                {
-                    let use = theTeam.remove(at: i)
-                    theTeam.insert(use, at:0)
-                }
-            }
-        }
     }
 }

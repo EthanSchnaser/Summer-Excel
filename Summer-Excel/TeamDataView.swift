@@ -10,6 +10,7 @@ import UIKit
 
 class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    var cellReuseIdentifier = "cell"
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return(theTeam.count)
@@ -19,7 +20,7 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         cell.textLabel?.text = theTeam[indexPath.row].thisName
-        tView = tableView
+        tableView = tableView
         return(cell)
     }
     

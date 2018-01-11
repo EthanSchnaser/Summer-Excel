@@ -8,10 +8,7 @@
 
 import UIKit
 
-func sortAlpha()
-{
-    
-}
+
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 

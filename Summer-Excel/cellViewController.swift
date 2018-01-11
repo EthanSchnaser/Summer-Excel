@@ -1,8 +1,8 @@
 //
-//  SortingPopUpViewController.swift
+//  cellViewController.swift
 //  Summer-Excel
 //
-//  Created by SCHNASER, ETHAN on 1/2/18.
+//  Created by Ethan Schnaser on 1/4/18.
 //  Copyright © 2018 DIstrict 196. All rights reserved.
 //
 
@@ -12,7 +12,6 @@ class SortingPopUpViewController: TeamDataView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
 
         // Do any additional setup after loading the view.
     }

@@ -22,7 +22,6 @@
 		6F521C871FDEFAA200474EE6 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C861FDEFAA200474EE6 /* HomepageView.swift */; };
 		6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */; };
 		6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */; };
-		6F5BC35F1FFBFCDF00007AB0 /* SortingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5BC35E1FFBFCDF00007AB0 /* SortingPopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		6F521C861FDEFAA200474EE6 /* HomepageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
 		6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
 		6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataView.swift; sourceTree = "<group>"; };
-		6F5BC35E1FFBFCDF00007AB0 /* SortingPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortingPopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +117,6 @@
 				FB526BC91FDEF6EB00C32B3D /* Functionality Classes */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
-				6F5BC35E1FFBFCDF00007AB0 /* SortingPopUpViewController.swift */,
 				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
 				6F0653221FD9AF8D009C8587 /* LaunchScreen.storyboard */,
 				6F0653251FD9AF8D009C8587 /* Info.plist */,
@@ -306,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */,
-				6F5BC35F1FFBFCDF00007AB0 /* SortingPopUpViewController.swift in Sources */,
 				6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */,
 				6F521C871FDEFAA200474EE6 /* HomepageView.swift in Sources */,
 				6F06531C1FD9AF8D009C8587 /* ViewController.swift in Sources */,

@@ -11,6 +11,7 @@ import UIKit
 class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tView: UITableView!
     var cellReuseIdentifier = "cell"
+    var int = 0
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return(theTeam.count)
@@ -25,12 +26,38 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     @IBAction func showPopUp(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! SortingPopUpViewController
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+
+        if int <= 0
+        {
+            theTeam = theTeam.sorted(by:({$0.totalMiles > $1.totalMiles}))
+            tView?.reloadData()
+            int = 1
+            print("Total Miles")
+            return
+        }
+        if int > 0 && int < 2
+        {
+            theTeam = theTeam.sorted(by:({$0.thisGrade < $1.thisGrade}))
+            tView?.reloadData()
+            int = int + 1
+            print("Grade Level")
+            return
+        }
+        if int == 2
+        {
+            theTeam = theTeam.sorted(by:({$0.totalPace.seconds > $1.totalPace.seconds}))
+        }
+        else
+        {
+        theTeam = theTeam.sorted(by:({$0.thisName < $1.thisName}))
+            tView?.reloadData()
+            int = int + 1
+            print("Alphabetical")
+            return
+        }
+    
     }
+
 
     }
 

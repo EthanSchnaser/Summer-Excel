@@ -112,9 +112,9 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
         theTeam.append(newAthlete)
         
         
-        if theTeam.count > 2
+        if theTeam.count >= 2
         {
-         theTeam = theTeam.sorted(by:({$0.thisName < $1.thisName}))
+         theTeam = theTeam.sorted(by:({$0.thisName.capitalized < $1.thisName.capitalized}))
         }
         
         dismiss(animated: true, completion: nil)

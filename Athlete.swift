@@ -18,7 +18,7 @@ class Athlete: NSObject {
     var totalMiles: Double
     var totalTime = Time(sec: 0, min: 0, hou: 0)
     var attendance: Int
-    var totalPace = Time(sec: 0, min: 0, hou: 0)
+    var averagePace = Time(sec: 0, min: 0, hou: 0)
     
     
     init(name: String, grade: Int) {

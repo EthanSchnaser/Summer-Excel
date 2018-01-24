@@ -220,7 +220,11 @@
                                                 <action selector="showPopUp:" destination="yTj-TO-sJT" id="mWK-Ea-eVM"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Export" id="0ye-dh-QfZ"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Export" id="0ye-dh-QfZ">
+                                            <connections>
+                                                <action selector="exportFile:" destination="yTj-TO-sJT" id="S2z-gx-Yfn"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

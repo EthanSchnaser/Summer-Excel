@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var tView: UITableView!
     var cellReuseIdentifier = "TableViewCell"
     var int = 0
@@ -21,7 +22,7 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! TableViewCell
         let totMi = String(theTeam[indexPath.row].totalMiles)
-        let avePace = theTeam[indexPath.row].totalPace.toString()
+        let avePace = theTeam[indexPath.row].averagePace.toString()
         let gra = String(theTeam[indexPath.row].thisGrade)
         cell.name?.text = theTeam[indexPath.row].thisName
         cell.totalMiles?.text = totMi
@@ -51,7 +52,7 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
         }
         if int == 2
         {
-            theTeam = theTeam.sorted(by:({$0.totalPace.seconds > $1.totalPace.seconds}))
+            theTeam = theTeam.sorted(by:({$0.averagePace.seconds > $1.averagePace.seconds}))
             tView?.reloadData()
             int += 1
             print("Average Pace")
@@ -69,5 +70,57 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
 
 
+    @IBAction func exportFile(_ sender: Any) {
+        var csvText = "First Name,Last Name,Grade,Total Miles,Average Pace,Total Time,ExcelAttendence\n"
+        let fileName = "Runners.csv"
+        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        if theTeam.count > 0
+        {
+        for i in stride(from: 0, to: theTeam.count, by: 1) {
+            let tmp: Athlete = theTeam[i]
+            let first = tmp.thisName.components(separatedBy: " ").first!
+            let last = tmp.thisName.components(separatedBy: " ").last!
+            let grade = tmp.thisGrade
+            let miles = tmp.totalMiles
+            let pace = tmp.averagePace
+            let time = tmp.totalTime
+            let excelAtt = tmp.attendance
+            let newLine = "\(first),\(last),\(grade),\(miles),\(pace),\(time),\(excelAtt)\n"
+            csvText.append(newLine)
+            }
+        
+            if MFMailComposeViewController.canSendMail() {
+                let emailController = MFMailComposeViewController()
+                emailController.mailComposeDelegate = self
+                emailController.setToRecipients([]) //I usually leave this blank unless it's a "message the developer" type thing
+                emailController.setSubject("Here is your fancy email")
+                emailController.setMessageBody("Wow, look at this cool email", isHTML: false)
+            }
+        
+            do {
+                try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+                let vc = UIActivityViewController(activityItems: [path!], applicationActivities: [])
+                vc.excludedActivityTypes = [
+                    UIActivityType.assignToContact,
+                    UIActivityType.saveToCameraRoll,
+                    UIActivityType.postToFlickr,
+                    UIActivityType.postToVimeo,
+                    UIActivityType.postToTencentWeibo,
+                    UIActivityType.postToTwitter,
+                    UIActivityType.postToFacebook,
+                    UIActivityType.openInIBooks
+                ]
+                present(vc, animated: true, completion: nil)
+            } catch {
+                print("Failed to create file")
+                print("\(error)")
+                
+            }
+        }
+        else{
+            print("Error")
+        }
+        }
     }
+
 

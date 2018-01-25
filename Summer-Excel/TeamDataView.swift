@@ -9,59 +9,65 @@
 import UIKit
 
 class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tView: UITableView!
+    var cellReuseIdentifier = "TableViewCell"
+    var int = 0
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return(theTeam.count)
     }
-    
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default , reuseIdentifier: "cell")
-        cell.textLabel?.text = theTeam[indexPath.row].thisName
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! TableViewCell
+        let totMi = String(theTeam[indexPath.row].totalMiles)
+        let avePace = theTeam[indexPath.row].totalPace.toString()
+        let gra = String(theTeam[indexPath.row].thisGrade)
+        cell.name?.text = theTeam[indexPath.row].thisName
+        cell.totalMiles?.text = totMi
+        cell.averagePace?.text = avePace
+        cell.grade?.text = gra
+        tView = tableView
         return(cell)
     }
+    
     @IBAction func showPopUp(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! SortingPopUpViewController
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+
+        if int <= 0
+        {
+            theTeam = theTeam.sorted(by:({$0.totalMiles > $1.totalMiles}))
+            tView?.reloadData()
+            int = 1
+            print("Total Miles")
+            return
+        }
+        if int > 0 && int < 2
+        {
+            theTeam = theTeam.sorted(by:({$0.thisGrade > $1.thisGrade}))
+            tView?.reloadData()
+            int = int + 1
+            print("Grade Level")
+            return
+        }
+        if int == 2
+        {
+            theTeam = theTeam.sorted(by:({$0.totalPace.seconds > $1.totalPace.seconds}))
+            tView?.reloadData()
+            int += 1
+            print("Average Pace")
+            return
+        }
+        else
+        {
+        theTeam = theTeam.sorted(by:({$0.thisName < $1.thisName}))
+            tView?.reloadData()
+            int = 0
+            print("Alphabetical")
+            return
+        }
+    
     }
 
-    func sortAlpha()
-    {
-        let Ethan = Athlete(name: "Ethan", grade: 12)
-        let Max = Athlete(name: "Max", grade: 12)
-        let Jake = Athlete(name: "Jake", grade: 12)
-        theTeam.append(Ethan)
-        theTeam.append(Max)
-        theTeam.append(Jake)
-        let length = theTeam.count
-        var tmpArray: Array = [""]
-        for i in stride(from: 0, to: length, by: 1)
-        {
-            tmpArray[i] = theTeam[i].thisName
-        }
-        tmpArray.sort()
-        for i in stride(from: 0, to: length, by: 1)
-        {
-            let store = theTeam[i].thisName
-            for i in stride(from: 0, to: length, by: 1)
-            {
-                if (store == tmpArray[i])
-                {
-                    let use = theTeam.remove(at: i)
-                    theTeam.insert(use, at:0)
-                }
-            }
-        }
-        for i in stride(from: 0, to: length, by: 1)
-        {
-        print(theTeam[i].thisName)
-        }
-        
-        
-    }
+
     }
 

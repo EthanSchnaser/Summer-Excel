@@ -93,9 +93,9 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func addTeammate(_ sender: Any) {
+
         let athleteName = firstName.text! + " " + lastName.text!
         var gradeSelected = 0
-        
         
         if gradeNine.isSelected {
             gradeSelected = 9
@@ -110,6 +110,12 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
         let newAthlete = Athlete(name: athleteName, grade: gradeSelected)
         
         theTeam.append(newAthlete)
+        
+        
+        if theTeam.count >= 2
+        {
+         theTeam = theTeam.sorted(by:({$0.thisName.capitalized < $1.thisName.capitalized}))
+        }
         
         dismiss(animated: true, completion: nil)
         

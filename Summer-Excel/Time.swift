@@ -34,6 +34,7 @@ class Time: NSObject {
         }
         else{
             hours = minutes/60
+            minutes = minutes - (hours * 60)
         }
     }
     //This function will allow a time object to have another time object's instance variables added with their own
@@ -58,15 +59,16 @@ class Time: NSObject {
         let min = String(minutes)
         let sec = String(seconds)
         let hou = String(hours)
-        if (hours <= 0)
+        if hours == 0
         {
-            result = min + "minutes" + sec + "seconds"
+        result = min + " min " + sec + " sec"
         }
         else
         {
-            result = hou + "hours" + min + "minutes" + sec + "seconds"
+        result = hou + " hours " + min + " min " + sec + "sec"
         }
         return result
+
     }
     
     //Divides the time object by a double using floating point arithmetic

@@ -1,18 +1,17 @@
 //
-//  SortingPopUpViewController.swift
+//  cellViewController.swift
 //  Summer-Excel
 //
-//  Created by SCHNASER, ETHAN on 1/2/18.
+//  Created by Ethan Schnaser on 1/4/18.
 //  Copyright © 2018 DIstrict 196. All rights reserved.
 //
 
 import UIKit
 
-class SortingPopUpViewController: UIViewController {
+class SortingPopUpViewController: TeamDataView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
 
         // Do any additional setup after loading the view.
     }
@@ -40,6 +39,9 @@ class SortingPopUpViewController: UIViewController {
         self.view.removeFromSuperview()
     }
     @IBAction func closePopUp(_ sender: Any) {
+
+        theTeam = theTeam.sorted(by: ({$0.thisName < $1.thisName}))
+        super.reload()
         self.view.removeFromSuperview()
     }
 }

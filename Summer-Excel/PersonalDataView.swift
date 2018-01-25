@@ -16,6 +16,12 @@ class PersonalDataView: UIViewController{
     
     @IBOutlet weak var datePicker: UIDatePicker!
 
+    @IBOutlet weak var runDate: UITextField!
+    
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

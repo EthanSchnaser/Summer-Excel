@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
+class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
 
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!
@@ -86,11 +86,7 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
         gradeTwelve.isSelected = true
         enabled()
     }
-    
-    @IBAction func cancelPopUp(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
     
     @IBAction func addTeammate(_ sender: Any) {
 
@@ -109,16 +105,13 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
         
         let newAthlete = Athlete(name: athleteName, grade: gradeSelected)
         
-        theTeam.append(newAthlete)
-        
+        //theTeam.append(newAthlete)
+        super.addAthlete(addingAthlete: newAthlete)
         
         if theTeam.count >= 2
         {
          theTeam = theTeam.sorted(by:({$0.thisName.capitalized < $1.thisName.capitalized}))
         }
-        
-        dismiss(animated: true, completion: nil)
-        
         
     }
     

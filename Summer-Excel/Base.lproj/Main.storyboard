@@ -217,10 +217,14 @@
                                     <navigationItem title="Team Data" id="39Q-cI-RDd">
                                         <barButtonItem key="leftBarButtonItem" title="Sort" id="tYe-Vf-T3C">
                                             <connections>
-                                                <action selector="showPopUp:" destination="yTj-TO-sJT" id="mWK-Ea-eVM"/>
+                                                <action selector="sort:" destination="yTj-TO-sJT" id="dsH-Ac-EYS"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Export" id="0ye-dh-QfZ"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Export" id="0ye-dh-QfZ">
+                                            <connections>
+                                                <action selector="exportCsvFile:" destination="yTj-TO-sJT" id="dUd-jw-yg1"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

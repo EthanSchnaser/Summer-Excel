@@ -14,7 +14,6 @@ class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var secondTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.firstTextField.delegate = self
         self.secondTextField.delegate = self
     }

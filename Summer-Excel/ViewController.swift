@@ -49,6 +49,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        athletePickerView.reloadAllComponents()
+    }
+
+    
+    
     
 
 

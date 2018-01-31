@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
+class AddTeamatePopUp: ViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!
@@ -104,8 +104,7 @@ class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
         
         let newAthlete = Athlete(name: athleteName, grade: gradeSelected)
         
-        //theTeam.append(newAthlete)
-        super.addAthlete(addingAthlete: newAthlete)
+        theTeam.append(newAthlete)
         
         if theTeam.count >= 2
         {

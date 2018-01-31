@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTeamatePopUp: ViewController, UITextFieldDelegate {
+class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
 
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!

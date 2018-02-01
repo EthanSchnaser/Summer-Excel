@@ -12,15 +12,13 @@ import UIKit
 
 class PersonalDataView: UIViewController{
     
-    
-    
     @IBOutlet weak var datePicker: UIDatePicker!
 
     @IBOutlet weak var runDate: UITextField!
     
-
     @IBOutlet weak var weeklyStatsPU: UIButton!
     
+    @IBOutlet weak var totalStatsPU: UIButton!
     
     
     override func viewDidLoad() {
@@ -37,5 +35,6 @@ class PersonalDataView: UIViewController{
         // Dispose of any resources that can be recreated.
     }
 
+    
     
     }

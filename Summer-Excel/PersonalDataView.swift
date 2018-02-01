@@ -19,6 +19,7 @@ class PersonalDataView: UIViewController{
     @IBOutlet weak var runDate: UITextField!
     
 
+    @IBOutlet weak var weeklyStatsPU: UIButton!
     
     
     

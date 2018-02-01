@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var tView: UITableView!
     var cellReuseIdentifier = "TableViewCell"
     var int = 0
@@ -21,7 +22,7 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! TableViewCell
         let totMi = String(theTeam[indexPath.row].totalMiles)
-        let avePace = theTeam[indexPath.row].totalPace.toString()
+        let avePace = theTeam[indexPath.row].averagePace.toString()
         let gra = String(theTeam[indexPath.row].thisGrade)
         cell.name?.text = theTeam[indexPath.row].thisName
         cell.totalMiles?.text = totMi
@@ -31,8 +32,11 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
         return(cell)
     }
     
-    @IBAction func showPopUp(_ sender: Any) {
+    
 
+    @IBAction func sort(_ sender: Any) {
+        while theTeam.count > 0
+        {
         if int <= 0
         {
             theTeam = theTeam.sorted(by:({$0.totalMiles > $1.totalMiles}))
@@ -51,7 +55,7 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
         }
         if int == 2
         {
-            theTeam = theTeam.sorted(by:({$0.totalPace.seconds > $1.totalPace.seconds}))
+            theTeam = theTeam.sorted(by:({$0.averagePace.seconds > $1.averagePace.seconds}))
             tView?.reloadData()
             int += 1
             print("Average Pace")
@@ -65,9 +69,84 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
             print("Alphabetical")
             return
         }
+        }
+        return
     
     }
 
 
+    
+    @IBAction func exportCsvFile(_ sender: Any) {
+        var csvText: [String] = ["First Name,Last Name,Grade,Total Miles,Average Pace,Total Time,ExcelAttendence\n"]
+        let fileName = "Runners.csv"
+        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        if theTeam.count > 0
+        {
+        for i in stride(from: 0, to: theTeam.count, by: 1)
+        {
+            let tmp: Athlete = theTeam[i]
+            let first = tmp.thisName.components(separatedBy: " ").first!
+            let last = tmp.thisName.components(separatedBy: " ").last!
+            let grade = tmp.thisGrade
+            let miles = tmp.totalMiles
+            let pace = tmp.averagePace
+            let time = tmp.totalTime
+            let excelAtt = tmp.attendance
+            let newLine = "\(first),\(last),\(grade),\(miles),\(pace),\(time),\(excelAtt)\n"
+            csvText.append(newLine)
+        }
+            let inputString = csvText.joined(separator: ",")
+            let data = inputString.data(using: String.Encoding.utf8, allowLossyConversion: false)
+            if let content = data{
+                print("NSData: \(content)")
+            }
+            
+            //Generating email controller
+            func createEmailViewController() -> MFMailComposeViewController
+            {
+                let emailController = MFMailComposeViewController()
+                emailController.mailComposeDelegate = self
+                emailController.setSubject("Runner Data:")
+                emailController.setMessageBody("CSV file of Runner's total miles, average pace, total time, and grade level", isHTML: false)
+                emailController.setToRecipients(["shannon.braun@district196.org"])
+                
+                //Add csv file to the controller
+                emailController.addAttachmentData(data!, mimeType: "text/csv", fileName: fileName)
+                
+                return emailController
+                
+            }
+            
+            func showSendMailErrorAlert()
+            {
+                let sendMailErrorAlert = UIAlertController(title: "Could not send Email", message: "Your device could not send email. Please check your email configureation and try again", preferredStyle: UIAlertControllerStyle.alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) {action in}
+                
+                sendMailErrorAlert.addAction(OKAction)
+                sendMailErrorAlert.present(sendMailErrorAlert, animated: true, completion: nil)
+            }
+
+            //The following code will allow the user to enter the subject, body text, and the email recipient to send the already attached CSV file
+            let emailViewController = createEmailViewController()
+            if MFMailComposeViewController.canSendMail()
+            {
+                self.present(emailViewController, animated: true, completion: nil)
+            }
+            else
+            {
+                showSendMailErrorAlert()
+            }
+
+            
+            
+                    }
+        
+        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?)
+        {
+            controller.dismiss(animated: true, completion: nil)
+        }
+
     }
+}
+
 

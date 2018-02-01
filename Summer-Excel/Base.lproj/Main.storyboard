@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginScreen" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -361,10 +361,14 @@
                                     <navigationItem title="Team Data" id="39Q-cI-RDd">
                                         <barButtonItem key="leftBarButtonItem" title="Sort" id="tYe-Vf-T3C">
                                             <connections>
-                                                <action selector="showPopUp:" destination="yTj-TO-sJT" id="mWK-Ea-eVM"/>
+                                                <action selector="sort:" destination="yTj-TO-sJT" id="dsH-Ac-EYS"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Export" id="0ye-dh-QfZ"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Export" id="0ye-dh-QfZ">
+                                            <connections>
+                                                <action selector="exportCsvFile:" destination="yTj-TO-sJT" id="dUd-jw-yg1"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -667,6 +671,7 @@
                                         </state>
                                         <connections>
                                             <action selector="addTeammate:" destination="9ll-bG-atM" eventType="touchUpInside" id="xo1-8i-ysh"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="dJQ-8q-ZGv"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaL-VL-u8x">
@@ -750,7 +755,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelPopUp:" destination="9ll-bG-atM" eventType="touchUpInside" id="kJO-w4-fm6"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="WHB-bw-ZW6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -788,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkk-VJ-fLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1879.2" y="-199.25037481259372"/>
+            <point key="canvasLocation" x="-3062" y="-342"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

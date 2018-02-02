@@ -13,7 +13,7 @@ import os.log   // added for accessing persistent data storage
 class PersistentAthleteArray: NSObject, NSCoding {
     
     //MARK: Properties
-    var athleteNames: [Athlete]
+    var athletes: [Athlete]
     var fileStoredName: String
     
     // ******* PART 1 **************
@@ -40,7 +40,7 @@ class PersistentAthleteArray: NSObject, NSCoding {
         }
         
         // Initialize properties.
-        athleteNames = names
+        athletes = names
         fileStoredName = fileName
         DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
         ArchiveURL = DocumentsDirectory.appendingPathComponent(fileName)
@@ -49,7 +49,7 @@ class PersistentAthleteArray: NSObject, NSCoding {
     // ******* PART 2a ********** Attach the property names to the archived names
     //MARK: NSCoding
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(athleteNames, forKey: PropertyKey.stringNames)
+        aCoder.encode(athletes, forKey: PropertyKey.stringNames)
     }
     
     // ******* PART 2b ********** create the instance with the archive information
@@ -69,8 +69,8 @@ class PersistentAthleteArray: NSObject, NSCoding {
     // Save String information to long term storage
     //  str: the String to be archived
     func archiveString(ath: [Athlete]) {
-        athleteNames = ath
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(athleteNames, toFile: ArchiveURL.path)
+        athletes = ath
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(athletes, toFile: ArchiveURL.path)
         if isSuccessfulSave {
             os_log("String successfully saved.", log: OSLog.default, type: .debug)
         } else {

@@ -6,9 +6,11 @@
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 
-
-var theTeam: [Athlete] = []
 //Global array
+var theTeam: [Athlete] = []
+
+//Array that saves the data during previous app closures
+let pArray = PersistentAthleteArray(names: theTeam, fileName: "Athlete Info")
 
 import UIKit
 
@@ -19,7 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //Reloads theTeam array after the app launches
+        if let xtmp = pArray?.restoreString()
+        {
+            theTeam = xtmp
+        }
         return true
     }
 
@@ -42,7 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        //Saves the data between app executions
+
+        if let xtmp = pArray?.restoreString()
+        {
+            theTeam = xtmp
+        }
+        pArray?.archiveString(ath: theTeam)
     }
 
 

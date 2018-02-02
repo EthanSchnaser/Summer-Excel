@@ -42,8 +42,16 @@ class HomepageView: UIViewController {
         
         //creates the workout for this log
         let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended)
- 
         
+        //attaches the workout to the athlete that is logged in
+        theAthlete?.addWorkout(new: thisWorkout)
+        
+        //Clears the fields
+        mileInput.text = nil
+        minuteInput.text = nil
+        notesInput.text = nil
+        attendanceInput.isOn = false
+        enabled()
     }
     
     

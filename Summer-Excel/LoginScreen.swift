@@ -16,16 +16,16 @@ class LoginScreen: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     @IBOutlet weak var athletePickerView: UIPickerView!
     @IBOutlet weak var excelLogHeader: UILabel!
-    
+    @IBOutlet weak var loginButton: UIButton!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        loginEnabled()
         return 1
     }
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return theTeam[row].thisName
-        
     }
     
     
@@ -33,18 +33,8 @@ class LoginScreen: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         return theTeam.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        excelLogHeader.text = theTeam[row].thisName
-    }
-    
-    func addAthlete(addingAthlete: Athlete) {
-        theTeam.append(addingAthlete)
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -55,6 +45,18 @@ class LoginScreen: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     
     
+    @IBAction func loginPressed(_ sender: Any) {
+        let x = athletePickerView.selectedRow(inComponent: 0)
+        theAthlete = theTeam[x]
+    }
+    
+    func loginEnabled() {
+        if theTeam.count < 1 {
+            loginButton.isEnabled = false
+        } else {
+            loginButton.isEnabled = true
+        }
+    }
     
 }
 

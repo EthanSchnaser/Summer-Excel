@@ -147,12 +147,12 @@
 		6F521C8C1FDF029500474EE6 /* View Controller Files */ = {
 			isa = PBXGroup;
 			children = (
+				6F2852E3202235FD00077CA4 /* LoginScreen.swift */,
 				6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */,
 				6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */,
 				6F521C861FDEFAA200474EE6 /* HomepageView.swift */,
 				57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */,
 				6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */,
-				6F2852E3202235FD00077CA4 /* LoginScreen.swift */,
 			);
 			name = "View Controller Files";
 			sourceTree = "<group>";

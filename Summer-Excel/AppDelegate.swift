@@ -6,9 +6,11 @@
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 
-
+//Global array that contains the while team
 var theTeam: [Athlete] = []
-//Global array
+
+//Global variable for the athlete currently logged in
+var theAthlete: Athlete? = nil
 
 import UIKit
 

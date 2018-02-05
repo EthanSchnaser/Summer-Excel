@@ -103,7 +103,7 @@ class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
         }
         
         let newAthlete = Athlete(name: athleteName, grade: gradeSelected)
-        
+
         theTeam.append(newAthlete)
         
         if theTeam.count >= 2
@@ -111,6 +111,8 @@ class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
          theTeam = theTeam.sorted(by:({$0.thisName.capitalized < $1.thisName.capitalized}))
         }
         
+        //Saves the data between app executions
+        pArray?.archiveString(str: theTeam)
     }
     
     func enabled() {

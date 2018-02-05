@@ -6,11 +6,14 @@
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 
-//Global array
+//Global array that contains the while team
 var theTeam: [Athlete] = []
 
-//Array that saves the data during previous app closures
-let pArray = PersistentAthleteArray(names: theTeam, fileName: "Athlete Info")
+//Global variable for the athlete currently logged in
+var theAthlete: Athlete? = nil
+
+//Array that saves the data between app closures
+var pArray: PersistentStringArray?
 
 import UIKit
 
@@ -20,12 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    func athleteToString(
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //Reloads theTeam array after the app launches
-        if let xtmp = pArray?.restoreString()
-        {
-            theTeam = xtmp
-        }
+
         return true
     }
 
@@ -48,13 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        //Saves the data between app executions
 
-        if let xtmp = pArray?.restoreString()
-        {
-            theTeam = xtmp
-        }
-        pArray?.archiveString(ath: theTeam)
     }
 
 

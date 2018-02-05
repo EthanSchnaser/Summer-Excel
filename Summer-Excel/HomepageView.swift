@@ -52,6 +52,8 @@ class HomepageView: UIViewController {
         notesInput.text = nil
         attendanceInput.isOn = false
         enabled()
+        
+
     }
     
     

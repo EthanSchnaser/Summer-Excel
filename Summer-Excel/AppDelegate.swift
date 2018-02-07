@@ -21,9 +21,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
-    func athleteToString(
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -49,7 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-
+        
+        let tmp: [Athlete] = theTeam
+        let athleteData = NSKeyedArchiver.archivedData(withRootObject: tmp)
+        UserDefaults().set(athleteData, forKey: "personData")
+        
     }
 
 

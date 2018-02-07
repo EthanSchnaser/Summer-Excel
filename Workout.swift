@@ -8,26 +8,36 @@
 
 import UIKit
 
-class Workout: NSObject {
+class Workout: NSObject, NSCoding {
     
-    var milesRan: Double
+    var milesRan: Double!
     //Number of Miles ran. Default: nil
     
-    var timeElapsed: Time
+    var timeElapsed: Time!
     //Time it took to run miles entered(in minutes). Default: nil
     
     var date: Date
     //The user is able to choose the date in which to log their workout
     
-    var avgMilePace: Time
+    var avgMilePace: Time!
     //The average amount of time it takes the user to run a mile based off of the miles and time they entered. Optional when logging a workout Default: nil
     
-    var notes: String
+    var notes: String!
     //An optional string of characters the user enters when logging a run.
     
-    var didAttend: Bool
+    var didAttend: Bool!
     
-    init(miles: Double, timeE: Time, theDate: Date, words: String, attend: Bool )
+    required convenience init(coder decoder:NSCoder)
+    {
+        self.milesRan = decoder.decodeObject(forKey: "milesRan") as! Double
+        self.timeElapsed = decoder.decodeObject(forKey: "timeElapsed") as! Time
+        self.date = decoder.decodeObject(forKey: "date") as! Date
+        self.avgMilePace = decoder.decodeObject(forKey: "avgMilePace") as! Time
+        self.notes = decoder.decodeObject(forKey: "notes") as! String
+        self.didAttend = decoder.decodeObject(forKey: "didAttend") as! Bool
+    }
+    
+    convenience init(miles: Double, timeE: Time, theDate: Date, words: String, attend: Bool )
     {
         
         timeElapsed = timeE

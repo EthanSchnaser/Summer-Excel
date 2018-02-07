@@ -8,26 +8,58 @@
 
 import UIKit
 
-class Athlete: NSObject {
+class Athlete: NSObject, NSCoding {
     
     
     //All the Athlete properties are found here
-    var thisName: String
-    var thisGrade: Int
-    var workouts = [Workout]()
-    var totalMiles: Double
+    var thisName: String!
+    var thisGrade: Int! = 0
+    var workouts: [Workout]!
+    var totalMiles: Double! = 0.0
     var totalTime = Time(sec: 0, min: 0, hou: 0)
-    var attendance: Int
+    var attendance: Int! = 0
     var averagePace = Time(sec: 0, min: 0, hou: 0)
     
-    
-    init(name: String, grade: Int) {
+    init()
+    {
+        thisName = ""
+        thisGrade = 0
+        workouts = [Workout]()
+        totalMiles = miles
+        totalTime = time
+        attendance = attend
+        averagePace = avPace
         
+    }
+    
+    required convenience init(coder decoder: NSCoder) {
+        self.init()
+        self.thisName = decoder.decodeObject(forKey: "thisName") as! String
+        self.thisGrade = decoder.decodeObject(forKey: "thisGrade") as! Int
+        self.workouts = decoder.decodeObject(forKey: "workouts") as! [Workout]
+        self.totalMiles = decoder.decodeObject(forKey: "totalMiles") as! Double
+        self.totalTime = decoder.decodeObject(forKey: "totalTime") as! Time
+        self.attendance = decoder.decodeObject(forKey: "attendance") as! Int
+        self.averagePace = decoder.decodeObject(forKey: "averagePace") as! Time
+    }
+    
+    convenience init(name: String, grade: Int) {
+        self.init()
         thisName = name
         thisGrade = grade
         totalMiles = 0
         attendance = 0
         
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        if let thisName = thisName {aCoder.encode(thisName, forKey: "thisName")}
+        if let thisGrade = thisGrade {aCoder.encode(thisGrade, forKey: "thisGrade")}
+        if let workouts = workouts {aCoder.encode(workouts, forKey: "workouts")}
+        if let totalMiles = totalMiles {aCoder.encode(totalMiles, forKey: "totalMiles")}
+        if let totalTime = totalTime {aCoder.encode(totalTime, forKey: "totalTime")}
+        if let attendance = attendance {aCoder.encode(attendance, forKey: "attendance")}
+        if let averagePace = averagePace {aCoder.encode(averagePace, forKey: "averagePace")}
     }
     
     

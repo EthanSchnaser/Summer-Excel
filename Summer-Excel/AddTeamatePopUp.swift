@@ -111,8 +111,7 @@ class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
          theTeam = theTeam.sorted(by:({$0.thisName.capitalized < $1.thisName.capitalized}))
         }
         
-        //Saves the data between app executions
-        pArray?.archiveString(str: theTeam)
+
     }
     
     func enabled() {

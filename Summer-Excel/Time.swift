@@ -10,11 +10,18 @@ import UIKit
 
 class Time: NSObject {
     //Integer that represents the seconds of the time the time object is representing
-    var seconds = 0
+    var seconds: Int!
     //Integer that represents the minutes of the time the time object is representing
-    var minutes = 0
+    var minutes: Int!
     //Integer that represents the hours of the time the time object is representing
-    var hours = 0
+    var hours: Int!
+    
+    override init()
+    {
+        seconds = 0
+        minutes = 0
+        hours = 0
+    }
     
     //Initializes the seconds, minutes and hours of the time object
     init(sec: Int, min: Int, hou: Int)
@@ -24,9 +31,32 @@ class Time: NSObject {
         hours = hou
     }
     
-    init(min: Int)
+    
+    //Necessary for persistant data
+    required convenience init(aCoder decoder: NSCoder)
     {
-        seconds = min * 60
+        self.init()
+        self.seconds = decoder.decodeObject(forKey: "seconds") as! Int
+        self.minutes = decoder.decodeObject(forKey: "minutes") as! Int
+        self.hours = decoder.decodeObject(forKey: "hours") as! Int
+    }
+    
+    convenience init(min: Int)
+    {
+        self.init()
+        minutes = min
+    }
+    
+    func encode(with aCoder: NSCoder)
+    {
+        if let seconds = seconds {aCoder.encode(seconds, forKey: "seconds")}
+        if let minutes = minutes {aCoder.encode(minutes, forKey: "minutes")}
+        if let hours = hours {aCoder.encode(hours, forKey: "hours")}
+    }
+    
+    init(min: Int, sec: Int)
+    {
+        seconds = 0
         minutes = min
         if(minutes < 60)
         {
@@ -42,9 +72,9 @@ class Time: NSObject {
     //return: none
     func addTime(time2: Time)
     {
-        let sec = time2.seconds
-        let min = time2.minutes
-        let hou = time2.hours
+        let sec = time2.seconds!
+        let min = time2.minutes!
+        let hou = time2.hours!
         seconds = seconds + sec
         minutes = minutes + min
         hours = hours + hou

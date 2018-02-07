@@ -16,19 +16,19 @@ class Athlete: NSObject, NSCoding {
     var thisGrade: Int! = 0
     var workouts: [Workout]!
     var totalMiles: Double! = 0.0
-    var totalTime = Time(sec: 0, min: 0, hou: 0)
+    var totalTime: Time!
     var attendance: Int! = 0
-    var averagePace = Time(sec: 0, min: 0, hou: 0)
+    var averagePace: Time!
     
-    init()
+    override init()
     {
         thisName = ""
         thisGrade = 0
         workouts = [Workout]()
-        totalMiles = miles
-        totalTime = time
-        attendance = attend
-        averagePace = avPace
+        totalMiles = 0
+        totalTime = Time(min: 0)
+        attendance = 0
+        averagePace = Time(min: 0)
         
     }
     
@@ -51,6 +51,7 @@ class Athlete: NSObject, NSCoding {
         attendance = 0
         
     }
+    
     
     func encode(with aCoder: NSCoder) {
         if let thisName = thisName {aCoder.encode(thisName, forKey: "thisName")}

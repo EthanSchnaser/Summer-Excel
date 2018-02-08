@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -191,16 +191,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Personal" id="KJr-6c-SNl"/>
+                    <tabBarItem key="tabBarItem" tag="-1" title="Personal" image="Personal.png" selectedImage="Personal.png" id="KJr-6c-SNl">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="datePicker" destination="DpP-ZC-fhU" id="o6s-HV-Z3Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORi-eu-v9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-111.2" y="-431.33433283358323"/>
+            <point key="canvasLocation" x="-324" y="-388"/>
         </scene>
-        <!--Team-->
+        <!--Team  -->
         <scene sceneID="TiY-1O-dlu">
             <objects>
                 <viewController id="yTj-TO-sJT" customClass="TeamDataView" customModule="Summer_Excel" sceneMemberID="viewController">
@@ -309,16 +311,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Team" id="kja-d1-Csl"/>
+                    <tabBarItem key="tabBarItem" title="Team  " image="Team.png" selectedImage="Team.png" id="kja-d1-Csl">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="topLabel" destination="SeC-PP-2l1" id="KxO-T2-CzC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu7-RL-7Qy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474.39999999999998" y="-1617.8410794602701"/>
+            <point key="canvasLocation" x="-324" y="-1423"/>
         </scene>
-        <!--Homepage-->
+        <!-- Log-->
         <scene sceneID="SMz-fU-iDh">
             <objects>
                 <viewController id="DmF-hA-eXZ" customClass="HomepageView" customModule="Summer_Excel" customModuleProvider="target" sceneMemberID="viewController">
@@ -468,7 +472,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Homepage" id="XVR-W2-Hgo"/>
+                    <tabBarItem key="tabBarItem" title=" Log" image="Log.png" selectedImage="Log.png" id="XVR-W2-Hgo">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="attendanceInput" destination="20C-6Q-Fmm" id="5yX-fn-VO6"/>
                         <outlet property="dateInput" destination="uqi-0l-zlT" id="KjM-1C-8cp"/>
@@ -480,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljW-ob-lug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982" y="-745"/>
+            <point key="canvasLocation" x="313" y="-991"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="afb-1j-c1A">
@@ -655,10 +661,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkk-VJ-fLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3062" y="-342"/>
+            <point key="canvasLocation" x="-2940" y="-493"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Log.png" width="60" height="40"/>
+        <image name="Personal.png" width="60" height="40"/>
+        <image name="Team.png" width="60" height="40"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dJQ-8q-ZGv"/>
+        <segue reference="JuG-nM-2ms"/>
     </inferredMetricsTieBreakers>
 </document>

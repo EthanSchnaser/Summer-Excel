@@ -6,9 +6,14 @@
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 
-
+//Global array that contains the while team
 var theTeam: [Athlete] = []
-//Global array
+
+//Global variable for the athlete currently logged in
+var theAthlete: Athlete? = nil
+
+//Array that saves the data between app closures
+var pArray: PersistentStringArray?
 
 import UIKit
 
@@ -16,10 +21,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         return true
     }
 
@@ -42,7 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        let tmp: [Athlete] = theTeam
+        let athleteData = NSKeyedArchiver.archivedData(withRootObject: tmp)
+        UserDefaults().set(athleteData, forKey: "personData")
+        
     }
 
 

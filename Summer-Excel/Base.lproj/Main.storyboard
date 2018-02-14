@@ -120,6 +120,9 @@
                                         <date key="date" timeIntervalSinceReferenceDate="537211346.00201595">
                                             <!--2018-01-09 17:22:26 +0000-->
                                         </date>
+                                        <connections>
+                                            <action selector="changeDate:" destination="4Q5-JY-ebO" eventType="valueChanged" id="y5M-nO-dpe"/>
+                                        </connections>
                                     </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -173,14 +176,14 @@
                                         <rect key="frame" x="8" y="0.0" width="145" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuD-8m-h7P">
                                         <rect key="frame" x="170" y="25" width="126" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.102908606" green="0.51269429150000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -198,6 +201,7 @@
                     <tabBarItem key="tabBarItem" title="Personal" id="KJr-6c-SNl"/>
                     <connections>
                         <outlet property="datePicker" destination="DpP-ZC-fhU" id="o6s-HV-Z3Y"/>
+                        <outlet property="milesButton" destination="KVu-VP-3Pr" id="HH2-1t-zsk"/>
                         <outlet property="runDate" destination="LuD-8m-h7P" id="fpA-3a-3AE"/>
                         <outlet property="totalStatsPU" destination="hbN-or-3UG" id="QCt-BN-CHc"/>
                         <outlet property="weeklyStatsPU" destination="YiO-VX-hHL" id="Xk1-ct-PIx"/>

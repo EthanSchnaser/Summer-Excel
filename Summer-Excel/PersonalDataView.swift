@@ -13,8 +13,8 @@ import UIKit
 class PersonalDataView: UIViewController{
     
     @IBOutlet weak var datePicker: UIDatePicker!
-
-    @IBOutlet weak var runDate: UITextField!
+   
+    @IBOutlet weak var runDate: UILabel!
     
     @IBOutlet weak var weeklyStatsPU: UIButton!
     
@@ -27,6 +27,11 @@ class PersonalDataView: UIViewController{
         
         datePicker.datePickerMode = UIDatePickerMode.date
         
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let strDate = dateFormatter.string(from: datePicker.date)
+        self.runDate.text = strDate
         
     }
     

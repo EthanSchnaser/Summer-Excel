@@ -27,6 +27,7 @@ class Workout: NSObject, NSCoding {
     
     var didAttend: Bool!
     
+    
     override init()
     {
         milesRan = 0
@@ -40,17 +41,17 @@ class Workout: NSObject, NSCoding {
     required convenience init(coder decoder:NSCoder)
     {
         self.init()
-        self.milesRan = decoder.decodeObject(forKey: "milesRan") as! Double
-        self.timeElapsed = decoder.decodeObject(forKey: "timeElapsed") as! Time
-        self.date = decoder.decodeObject(forKey: "date") as! Date
-        self.avgMilePace = decoder.decodeObject(forKey: "avgMilePace") as! Time
-        self.notes = decoder.decodeObject(forKey: "notes") as! String
-        self.didAttend = decoder.decodeObject(forKey: "didAttend") as! Bool
+        self.milesRan = decoder.decodeObject(forKey: "milesRan") as! Double!
+        self.timeElapsed = decoder.decodeObject(forKey: "timeElapsed") as! Time!
+        self.date = decoder.decodeObject(forKey: "date") as! Date!
+        self.avgMilePace = decoder.decodeObject(forKey: "avgMilePace") as! Time!
+        self.notes = decoder.decodeObject(forKey: "notes") as! String!
+        self.didAttend = decoder.decodeObject(forKey: "didAttend") as! Bool!
     }
     
-    convenience init(miles: Double, timeE: Time, theDate: Date, words: String, attend: Bool )
+    
+    init(miles: Double, timeE: Time, theDate: Date, words: String, attend: Bool )
     {
-        self.init()
         timeElapsed = timeE
         date = theDate
         if miles != 0.0 {
@@ -72,5 +73,6 @@ class Workout: NSObject, NSCoding {
         if let didAttend = didAttend {aCoder.encode(didAttend, forKey: "didAttend")}
     }
     
-
+    
 }
+

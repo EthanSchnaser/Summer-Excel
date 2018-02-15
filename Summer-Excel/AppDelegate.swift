@@ -46,10 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        
-        let tmp: [Athlete] = theTeam
-        let athleteData = NSKeyedArchiver.archivedData(withRootObject: tmp)
-        UserDefaults().set(athleteData, forKey: "personData")
+
         
     }
 

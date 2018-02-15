@@ -53,7 +53,9 @@ class HomepageView: UIViewController {
         attendanceInput.isOn = false
         enabled()
         
-
+        let tmp: [Athlete] = theTeam
+        let athleteData = NSKeyedArchiver.archivedData(withRootObject: tmp)
+        UserDefaults().set(athleteData, forKey: "athleteData")
     }
     
     

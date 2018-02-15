@@ -22,6 +22,7 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
     {
         return(theTeam.count)
     }
+    
 
     //Populates the cell with the information about the runner
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell

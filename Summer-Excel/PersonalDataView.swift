@@ -28,7 +28,7 @@ class PersonalDataView: UIViewController{
         
         //var selectedWorkout = theAthlete.getWorkout(datePicker.date)
         
-        //pulls the workout object for the selected datefor further use in the code
+        //pulls the workout object for the selected date for further use in the code
     }
     
     

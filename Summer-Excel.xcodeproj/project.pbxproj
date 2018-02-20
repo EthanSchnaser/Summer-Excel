@@ -26,6 +26,7 @@
 		FB5BF20D2028CB2500DD2FC4 /* Personal.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5BF20C2028CB2500DD2FC4 /* Personal.png */; };
 		FB5BF2112028CE3A00DD2FC4 /* Team.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5BF2102028CE3A00DD2FC4 /* Team.png */; };
 		FB5BF2132028D7B800DD2FC4 /* Log.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5BF2122028D7B800DD2FC4 /* Log.png */; };
+		FBF24B062033555000BE5146 /* CloudKitConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF24B052033555000BE5146 /* CloudKitConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +69,10 @@
 		6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
 		6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataView.swift; sourceTree = "<group>"; };
 		6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		FB5BF20C2028CB2500DD2FC4 /* Personal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Personal.png; path = ../../../Desktop/Personal.png; sourceTree = "<group>"; };
-		FB5BF2102028CE3A00DD2FC4 /* Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Team.png; path = ../../../Desktop/Team.png; sourceTree = "<group>"; };
-		FB5BF2122028D7B800DD2FC4 /* Log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Log.png; path = ../../../Desktop/Log.png; sourceTree = "<group>"; };
+		FB5BF20C2028CB2500DD2FC4 /* Personal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Personal.png; path = "../../../Desktop/tab bar icons/Personal.png"; sourceTree = "<group>"; };
+		FB5BF2102028CE3A00DD2FC4 /* Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Team.png; path = "../../../Desktop/tab bar icons/Team.png"; sourceTree = "<group>"; };
+		FB5BF2122028D7B800DD2FC4 /* Log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Log.png; path = "../../../Desktop/tab bar icons/Log.png"; sourceTree = "<group>"; };
+		FBF24B052033555000BE5146 /* CloudKitConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				6F521C861FDEFAA200474EE6 /* HomepageView.swift */,
 				57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */,
 				6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */,
+				FBF24B052033555000BE5146 /* CloudKitConnection.swift */,
 			);
 			name = "View Controller Files";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				6F0653481FD9B07A009C8587 /* Athlete.swift in Sources */,
 				57C0BFD71FDEF8EF001FD4A6 /* AddTeamatePopUp.swift in Sources */,
 				6FCD3BB3200E6FC400F80E95 /* TableViewCell.swift in Sources */,
+				FBF24B062033555000BE5146 /* CloudKitConnection.swift in Sources */,
 				6F1989D51FEAD6A70012B088 /* PersistantAthleteArray.swift in Sources */,
 				6F06534E1FD9B122009C8587 /* Time.swift in Sources */,
 				6F06531A1FD9AF8D009C8587 /* AppDelegate.swift in Sources */,

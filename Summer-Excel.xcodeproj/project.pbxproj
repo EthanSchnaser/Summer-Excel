@@ -23,9 +23,9 @@
 		6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */; };
 		6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */; };
 		6FCD3BB3200E6FC400F80E95 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */; };
-		FB5BF20D2028CB2500DD2FC4 /* Personal.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5BF20C2028CB2500DD2FC4 /* Personal.png */; };
-		FB5BF2112028CE3A00DD2FC4 /* Team.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5BF2102028CE3A00DD2FC4 /* Team.png */; };
-		FB5BF2132028D7B800DD2FC4 /* Log.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5BF2122028D7B800DD2FC4 /* Log.png */; };
+		FBD9478C203C9032002804C0 /* Log.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD9478E203C9032002804C0 /* Log.png */; };
+		FBD9478F203C903A002804C0 /* Team.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD94791203C903A002804C0 /* Team.png */; };
+		FBD94792203C903F002804C0 /* Personal.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD94794203C903F002804C0 /* Personal.png */; };
 		FBF24B062033555000BE5146 /* CloudKitConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF24B052033555000BE5146 /* CloudKitConnection.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,9 +69,9 @@
 		6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
 		6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataView.swift; sourceTree = "<group>"; };
 		6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		FB5BF20C2028CB2500DD2FC4 /* Personal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Personal.png; path = "../../../Desktop/tab bar icons/Personal.png"; sourceTree = "<group>"; };
-		FB5BF2102028CE3A00DD2FC4 /* Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Team.png; path = "../../../Desktop/tab bar icons/Team.png"; sourceTree = "<group>"; };
-		FB5BF2122028D7B800DD2FC4 /* Log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Log.png; path = "../../../Desktop/tab bar icons/Log.png"; sourceTree = "<group>"; };
+		FBD9478D203C9032002804C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Log.png; sourceTree = "<group>"; };
+		FBD94790203C903A002804C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Team.png; sourceTree = "<group>"; };
+		FBD94793203C903F002804C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Personal.png; sourceTree = "<group>"; };
 		FBF24B052033555000BE5146 /* CloudKitConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,9 +181,9 @@
 		FB5BF2052028C89200DD2FC4 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				FB5BF20C2028CB2500DD2FC4 /* Personal.png */,
-				FB5BF2102028CE3A00DD2FC4 /* Team.png */,
-				FB5BF2122028D7B800DD2FC4 /* Log.png */,
+				FBD94794203C903F002804C0 /* Personal.png */,
+				FBD94791203C903A002804C0 /* Team.png */,
+				FBD9478E203C9032002804C0 /* Log.png */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -298,12 +298,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB5BF2132028D7B800DD2FC4 /* Log.png in Resources */,
+				FBD9478C203C9032002804C0 /* Log.png in Resources */,
 				6F0653241FD9AF8D009C8587 /* LaunchScreen.storyboard in Resources */,
 				6F0653211FD9AF8D009C8587 /* Assets.xcassets in Resources */,
-				FB5BF2112028CE3A00DD2FC4 /* Team.png in Resources */,
+				FBD9478F203C903A002804C0 /* Team.png in Resources */,
 				6F06531F1FD9AF8D009C8587 /* Main.storyboard in Resources */,
-				FB5BF20D2028CB2500DD2FC4 /* Personal.png in Resources */,
+				FBD94792203C903F002804C0 /* Personal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +389,33 @@
 				6F0653231FD9AF8D009C8587 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FBD9478E203C9032002804C0 /* Log.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBD9478D203C9032002804C0 /* en */,
+			);
+			name = Log.png;
+			path = "../../../Desktop/tab bar icons";
+			sourceTree = "<group>";
+		};
+		FBD94791203C903A002804C0 /* Team.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBD94790203C903A002804C0 /* en */,
+			);
+			name = Team.png;
+			path = "../../../Desktop/tab bar icons";
+			sourceTree = "<group>";
+		};
+		FBD94794203C903F002804C0 /* Personal.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBD94793203C903F002804C0 /* en */,
+			);
+			name = Personal.png;
+			path = "../../../Desktop/tab bar icons";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

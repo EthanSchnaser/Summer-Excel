@@ -206,7 +206,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="-1" title="Personal" image="Personal.png" selectedImage="Personal.png" id="KJr-6c-SNl">
+                    <tabBarItem key="tabBarItem" tag="-1" title="Personal" image="Personal" selectedImage="Personal.png" id="KJr-6c-SNl">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
@@ -467,7 +467,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Team  " image="Team.png" selectedImage="Team.png" id="kja-d1-Csl">
+                    <tabBarItem key="tabBarItem" title="Team  " image="Team" selectedImage="Team.png" id="kja-d1-Csl">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
@@ -628,7 +628,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title=" Log" image="Log.png" selectedImage="Log.png" id="XVR-W2-Hgo">
+                    <tabBarItem key="tabBarItem" title=" Log" image="Log" selectedImage="Log.png" id="XVR-W2-Hgo">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
@@ -821,8 +821,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Log" width="60" height="40"/>
         <image name="Log.png" width="60" height="40"/>
+        <image name="Personal" width="60" height="40"/>
         <image name="Personal.png" width="60" height="40"/>
+        <image name="Team" width="60" height="40"/>
         <image name="Team.png" width="60" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>

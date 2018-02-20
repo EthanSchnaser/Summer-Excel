@@ -47,7 +47,7 @@ class Workout: NSObject, NSCoding {
         self.notes = decoder.decodeObject(forKey: "notes") as! String
         self.didAttend = decoder.decodeObject(forKey: "didAttend") as! Bool
     }
-    
+
     convenience init(miles: Double, timeE: Time, theDate: Date, words: String, attend: Bool )
     {
         self.init()
@@ -73,4 +73,10 @@ class Workout: NSObject, NSCoding {
     }
     
 
-}
+
+        
+    }
+    
+    
+
+

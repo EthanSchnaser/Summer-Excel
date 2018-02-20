@@ -115,6 +115,21 @@ class Athlete: NSObject, NSCoding {
         //Return a tuple of all the weekly totals
         return (sumMiles, sumTime, sumAttendance, sumPace)
         
+        
+        
+        //get method that will return the workout object from theAthelte from the date from the paramter
+        func getWorkout(selectedDate: Date) -> Workout {
+            let count = theAthlete!.workouts.count
+            for i in stride(from: 0, to: count, by: 1)
+            {
+                if(selectedDate == theAthlete?.workouts[i].date) {
+                    return (theAthlete?.workouts[i])!
+                }
+            }
+            return (theAthlete?.workouts[count])!
+            
+        }
+        
     }
     
     

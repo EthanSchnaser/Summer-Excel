@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -153,6 +153,9 @@
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="changeMiles:" destination="4Q5-JY-ebO" eventType="editingDidEnd" id="RSF-xg-Aga"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8:53.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VSz-os-Vx2">
                                         <rect key="frame" x="161" y="122" width="104" height="30"/>
@@ -160,6 +163,9 @@
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="changeTimeElapsed:" destination="4Q5-JY-ebO" eventType="editingDidEnd" id="KHe-sg-UPA"/>
+                                        </connections>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="I ran a marathon today real fast" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ce2-v0-UuN">
                                         <rect key="frame" x="38" y="218" width="227" height="84"/>
@@ -204,9 +210,11 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="changeTimeElapsed" destination="VSz-os-Vx2" id="33o-cH-ue3"/>
                         <outlet property="datePicker" destination="DpP-ZC-fhU" id="o6s-HV-Z3Y"/>
                         <outlet property="milesButton" destination="KVu-VP-3Pr" id="HH2-1t-zsk"/>
                         <outlet property="runDate" destination="LuD-8m-h7P" id="fpA-3a-3AE"/>
+                        <outlet property="timeButton" destination="VSz-os-Vx2" id="75z-Sb-OLE"/>
                         <outlet property="totalStatsPU" destination="hbN-or-3UG" id="QCt-BN-CHc"/>
                         <outlet property="weeklyStatsPU" destination="YiO-VX-hHL" id="Xk1-ct-PIx"/>
                     </connections>
@@ -350,7 +358,7 @@
             </objects>
             <point key="canvasLocation" x="-31.199999999999999" y="336.88155922038982"/>
         </scene>
-        <!--Team-->
+        <!--Team  -->
         <scene sceneID="TiY-1O-dlu">
             <objects>
                 <viewController id="yTj-TO-sJT" customClass="TeamDataView" customModule="Summer_Excel" sceneMemberID="viewController">
@@ -371,7 +379,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lPo-ZY-k1E" id="lfZ-OY-bBC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dG-qq-8SX">
@@ -818,7 +826,8 @@
         <image name="Team.png" width="60" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dJQ-8q-ZGv"/>
+        <segue reference="CLM-Em-SuP"/>
         <segue reference="Rrl-Fm-csm"/>
+        <segue reference="dJQ-8q-ZGv"/>
     </inferredMetricsTieBreakers>
 </document>

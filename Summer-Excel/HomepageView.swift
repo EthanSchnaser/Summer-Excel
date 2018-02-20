@@ -53,7 +53,7 @@ class HomepageView: UIViewController {
         attendanceInput.isOn = false
         enabled()
         
-
+        
     }
     
     

@@ -8,12 +8,13 @@
 
 import UIKit
 
-class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
+class AddTeamatePopUp: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.firstTextField.delegate = self
         self.secondTextField.delegate = self
     }
@@ -85,7 +86,11 @@ class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
         gradeTwelve.isSelected = true
         enabled()
     }
-
+    
+    @IBAction func cancelPopUp(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func addTeammate(_ sender: Any) {
 
@@ -103,16 +108,19 @@ class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
         }
         
         let newAthlete = Athlete(name: athleteName, grade: gradeSelected)
-
+        
         theTeam.append(newAthlete)
+        
         
         if theTeam.count >= 2
         {
          theTeam = theTeam.sorted(by:({$0.thisName.capitalized < $1.thisName.capitalized}))
         }
         
+        dismiss(animated: true, completion: nil)
         
-
+        
+        
     }
     
     func enabled() {

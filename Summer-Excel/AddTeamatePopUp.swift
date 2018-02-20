@@ -111,6 +111,7 @@ class AddTeamatePopUp: LoginScreen, UITextFieldDelegate {
          theTeam = theTeam.sorted(by:({$0.thisName.capitalized < $1.thisName.capitalized}))
         }
         
+        
 
     }
     

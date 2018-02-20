@@ -23,6 +23,7 @@
 		6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */; };
 		6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */; };
 		6FCD3BB3200E6FC400F80E95 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */; };
+		FB2C095C203C91D200F5BD3F /* tab bar icons in Resources */ = {isa = PBXBuildFile; fileRef = FB2C095B203C91D200F5BD3F /* tab bar icons */; };
 		FBD9478C203C9032002804C0 /* Log.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD9478E203C9032002804C0 /* Log.png */; };
 		FBD9478F203C903A002804C0 /* Team.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD94791203C903A002804C0 /* Team.png */; };
 		FBD94792203C903F002804C0 /* Personal.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD94794203C903F002804C0 /* Personal.png */; };
@@ -69,6 +70,7 @@
 		6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
 		6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataView.swift; sourceTree = "<group>"; };
 		6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FB2C095B203C91D200F5BD3F /* tab bar icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "tab bar icons"; path = "../../../Desktop/tab bar icons"; sourceTree = "<group>"; };
 		FBD9478D203C9032002804C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Log.png; sourceTree = "<group>"; };
 		FBD94790203C903A002804C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Team.png; sourceTree = "<group>"; };
 		FBD94793203C903F002804C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Personal.png; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				FBD94794203C903F002804C0 /* Personal.png */,
 				FBD94791203C903A002804C0 /* Team.png */,
 				FBD9478E203C9032002804C0 /* Log.png */,
+				FB2C095B203C91D200F5BD3F /* tab bar icons */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				FBD9478C203C9032002804C0 /* Log.png in Resources */,
 				6F0653241FD9AF8D009C8587 /* LaunchScreen.storyboard in Resources */,
 				6F0653211FD9AF8D009C8587 /* Assets.xcassets in Resources */,
+				FB2C095C203C91D200F5BD3F /* tab bar icons in Resources */,
 				FBD9478F203C903A002804C0 /* Team.png in Resources */,
 				6F06531F1FD9AF8D009C8587 /* Main.storyboard in Resources */,
 				FBD94792203C903F002804C0 /* Personal.png in Resources */,

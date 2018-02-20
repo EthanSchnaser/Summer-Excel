@@ -8,50 +8,30 @@
 
 import UIKit
 
-class Time: NSObject, NSCoding {
+class Time: NSObject, Codable {
     //Integer that represents the seconds of the time the time object is representing
-    var seconds: Int!
+    var seconds: Int
     //Integer that represents the minutes of the time the time object is representing
-    var minutes: Int!
+    var minutes: Int
     
     
-    override init()
-    {
-        seconds = 0
-        minutes = 0
-        
-    }
+
     
     //Initializes the seconds, minutes and hours of the time object
-    init(sec: Int, min: Int, hou: Int)
+    init(sec: Int, min: Int)
     {
         seconds = sec
         minutes = min
         
     }
     
-    
-    //Necessary for persistant data
-    required convenience init(coder decoder: NSCoder)
-    {
-        self.init()
-        self.seconds = decoder.decodeObject(forKey: "seconds") as! Int!
-        self.minutes = decoder.decodeObject(forKey: "minutes") as! Int!
-        
-    }
-    
     init(min: Int)
     {
-        
         minutes = min
+        seconds = 0
     }
     
-    func encode(with aCoder: NSCoder)
-    {
-        if let seconds = seconds {aCoder.encode(seconds, forKey: "seconds")}
-        if let minutes = minutes {aCoder.encode(minutes, forKey: "minutes")}
-        
-    }
+
     
     init(min: Int, sec: Int)
     {
@@ -64,8 +44,8 @@ class Time: NSObject, NSCoding {
     //return: none
     func addTime(time2: Time)
     {
-        let sec = time2.seconds!
-        let min = time2.minutes!
+        let sec = time2.seconds
+        let min = time2.minutes
         
         seconds = seconds + sec
         minutes = minutes + min
@@ -88,6 +68,15 @@ class Time: NSObject, NSCoding {
         Result.minutes = minutes/num
         return Result
         
+    }
+    
+    func encodeAndDecodeTime(time: Time)
+    {
+        let encoder = JSONEncoder()
+        let jsonData = try! encoder.encode(time)
+        
+        let decoder = JSONDecoder()
+        let timeClone = try! decoder.decode(Time.self, from: jsonData)
     }
     
 }

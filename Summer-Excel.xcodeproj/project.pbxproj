@@ -125,8 +125,8 @@
 				FB526BC91FDEF6EB00C32B3D /* Functionality Classes */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
-				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
 				6F0653221FD9AF8D009C8587 /* LaunchScreen.storyboard */,
+				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
 				6F0653251FD9AF8D009C8587 /* Info.plist */,
 				FB5BF2052028C89200DD2FC4 /* New Group */,
 			);

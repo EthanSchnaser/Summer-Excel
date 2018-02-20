@@ -8,60 +8,27 @@
 
 import UIKit
 
-class Athlete: NSObject, NSCoding {
+class Athlete: NSObject, Codable {
     
     
     //All the Athlete properties are found here
-    var thisName: String!
-    var thisGrade: Int!
-    var workouts: [Workout]!
-    var totalMiles: Double!
-    var totalTime: Time!
-    var attendance: Int!
-    var averagePace: Time!
+    var thisName: String = ""
+    var thisGrade: Int = 0
+    var workouts: [Workout] = []
+    var totalMiles: Double = 0.0
+    var totalTime: Time = Time(min: 0)
+    var attendance: Int = 0
+    var averagePace: Time = Time(min: 0)
     
-    override init()
-    {
-        thisName = ""
-        thisGrade = 0
-        workouts = [Workout]()
-        totalMiles = 0.0
-        totalTime = Time(min: 0)
-        attendance = 0
-        averagePace = Time(min: 0)
-        
-    }
-    
-    required convenience init(coder decoder: NSCoder) {
-        self.init()
-        self.thisName = decoder.decodeObject(forKey: "thisName") as! String
-        self.thisGrade = decoder.decodeObject(forKey: "thisGrade") as! Int!
-        self.workouts = decoder.decodeObject(forKey: "workouts") as! [Workout]
-        self.totalMiles = decoder.decodeObject(forKey: "totalMiles") as! Double!
-        self.totalTime = decoder.decodeObject(forKey: "totalTime") as! Time!
-        self.attendance = decoder.decodeObject(forKey: "attendance") as! Int!
-        self.averagePace = decoder.decodeObject(forKey: "averagePace") as! Time!
-        
-    }
+   
     
     init(name: String, grade: Int) {
         thisName = name
         thisGrade = grade
         totalMiles = 0
         attendance = 0
-        
     }
-    
-    
-    func encode(with aCoder: NSCoder) {
-        if let thisName = thisName {aCoder.encode(thisName, forKey: "thisName")}
-        if let thisGrade = thisGrade {aCoder.encode(thisGrade, forKey: "thisGrade")}
-        if let workouts = workouts {aCoder.encode(workouts, forKey: "workouts")}
-        if let totalMiles = totalMiles {aCoder.encode(totalMiles, forKey: "totalMiles")}
-        if let totalTime = totalTime {aCoder.encode(totalTime, forKey: "totalTime")}
-        if let attendance = attendance {aCoder.encode(attendance, forKey: "attendance")}
-        if let averagePace = averagePace {aCoder.encode(averagePace, forKey: "averagePace")}
-    }
+
     
     
     
@@ -72,9 +39,9 @@ class Athlete: NSObject, NSCoding {
         
         //Calculates the total miles, time, attendance, and pace and assigns it to the properties
         var sumMiles = 0.0
-        let sumTime = Time(sec: 0, min: 0, hou: 0)
+        let sumTime = Time(sec: 0, min: 0)
         var sumAttendance = 0
-        let sumPace = Time(sec: 0, min: 0, hou: 0)
+        let sumPace = Time(sec: 0, min: 0)
         for one in workouts {
             sumMiles = sumMiles + one.milesRan
             sumTime.addTime(time2: one.timeElapsed)
@@ -99,9 +66,9 @@ class Athlete: NSObject, NSCoding {
         
         //Calculates the total weekly miles, time, attendance, and pace
         var sumMiles = 0.0
-        let sumTime = Time(sec: 0, min: 0, hou: 0)
+        let sumTime = Time(sec: 0, min: 0)
         var sumAttendance = 0
-        let sumPace = Time(sec: 0, min: 0, hou: 0)
+        let sumPace = Time(sec: 0, min: 0)
         for each in workouts {
             if (each.date < saturday) && (each.date < sunday) {
                 sumMiles += each.milesRan
@@ -116,6 +83,28 @@ class Athlete: NSObject, NSCoding {
         //Return a tuple of all the weekly totals
         return (sumMiles, sumTime, sumAttendance, sumPace)
         
+    }
+    
+    func encodeAndDecodeAthlete(athlete: Athlete)
+    {
+        for i in stride(from: 0, to: theTeam.count, by: 1)
+        {
+            let tmp = theTeam[i]
+            for j in stride(from: 0, to: tmp.workouts.count, by: 1)
+            {
+                let tmpWorkout = theTeam[i].workouts[j]
+                tmpWorkout.encodeAndDecodeWorkout(werk: tmpWorkout)
+            }
+        }
+        
+        totalTime.encodeAndDecodeTime(time: totalTime)
+        averagePace.encodeAndDecodeTime(time: averagePace)
+        
+        let encoder = JSONEncoder()
+        let jsonData = try! encoder.encode(athlete)
+        
+        let decoder = JSONDecoder()
+        let werkClone = try! decoder.decode(Athlete.self, from: jsonData)
     }
     
     

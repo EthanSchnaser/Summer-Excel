@@ -18,6 +18,7 @@ class PersonalDataView: UIViewController{
     @IBOutlet weak var timeButton: UITextField!
     @IBOutlet weak var weeklyStatsPU: UIButton!
     @IBOutlet weak var totalStatsPU: UIButton!
+    @IBOutlet weak var noteSection: UITextView!
     
     @IBAction func changeDate(_ sender: AnyObject) {
         let dateFormatter = DateFormatter()
@@ -26,23 +27,12 @@ class PersonalDataView: UIViewController{
         self.runDate.text = strDate
         //everytime the date is changed in the datePicker, the label changes with it.
         
-        //var selectedWorkout = theAthlete.getWorkout(datePicker.date)
-        
+        //var selectedWorkout = theAthlete?.getWorkout(selectedDate: datePicker.date)
         //pulls the workout object for the selected date for further use in the code
     }
     
     
-    
-    @IBAction func changeMilesRan(_ sender: Any) {
-        
-    }
-    
-    
-    @IBAction func changeTimeElapsed(_ sender: Any) {
-        
-    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -55,13 +45,21 @@ class PersonalDataView: UIViewController{
         let strDate = dateFormatter.string(from: self.datePicker.date)
         self.runDate.text = strDate
         //sets the inital display date to the date datePicker is set to (Today)
-        //var selectedWorkout = theAthlete.getWorkout(datePicker.date)
+        //selectedWorkout = theAthlete?.getWorkout(selectedDate: datePicker.date)
         //pulls the workout object for the selected datefor further use in the code
         
         
-        //milesButton.text = String(theAthlete.getWorkout(datePicker.date).milesRan)
-        //timeButton.text = String(theAthlete.getWorkout(datePicker.date).timeElapsed)
+        //milesButton.text = String(theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan)
+        let miles = theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan
+        milesButton.text = String(format: "%f",miles!)
+        let minutes = theAthlete?.getWorkout(selectedDate: datePicker.date).timeElapsed
+        timeButton.text = minutes?.toString()
         //sets the miles and time button to the current value stored for that athlete on that day
+        
+        
+        
+        
+        
         
     }
 

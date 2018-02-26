@@ -22,7 +22,7 @@ class PersonalDataView: UIViewController{
     
     @IBAction func changeDate(_ sender: AnyObject) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         let strDate = dateFormatter.string(from: self.datePicker.date)
         self.runDate.text = strDate
         //everytime the date is changed in the datePicker, the label changes with it.
@@ -55,6 +55,8 @@ class PersonalDataView: UIViewController{
         let minutes = theAthlete?.getWorkout(selectedDate: datePicker.date).timeElapsed
         timeButton.text = minutes?.toString()
         //sets the miles and time button to the current value stored for that athlete on that day
+        
+        noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
         
         
         

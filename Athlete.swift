@@ -120,7 +120,7 @@ class Athlete: NSObject, NSCoding {
     
     
     func getWorkout(selectedDate: Date) -> Workout {
-        let tmpTime = Time(min: 0, sec: 0 )
+        let tmpTime = Time(sec: 0, min: 0)
         let temp = Workout(miles: 0, timeE: tmpTime, theDate: selectedDate, words: "", attend: false)
     //get method that will return the workout object from theAthelte from the date from the paramter
         let count = theAthlete!.workouts.count

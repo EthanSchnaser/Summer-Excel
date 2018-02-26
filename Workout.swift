@@ -39,7 +39,8 @@ class Workout: NSObject, NSCoding {
         if miles != 0.0
         {
             avgMilePace = timeE.divideTime(number: miles)
-        } else
+        }
+        else
         {
             avgMilePace = Time(min: 0)
         }
@@ -61,7 +62,8 @@ class Workout: NSObject, NSCoding {
         self.init(miles: miles, timeE: timePassed!, theDate: day!, words: word!, attend: Attend)
     }
     
-    func encode(with aCoder: NSCoder) {
+    func encode(with aCoder: NSCoder)
+    {
         aCoder.encode(self.milesRan, forKey: "milesRan")
         aCoder.encode(self.timeElapsed, forKey: "timeElapsed")
         aCoder.encode(self.date, forKey: "date")
@@ -75,4 +77,11 @@ class Workout: NSObject, NSCoding {
     
     
 }
+
+
+        
+
+    
+    
+
 

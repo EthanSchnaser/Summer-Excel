@@ -371,33 +371,6 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		FBD9478E203C9032002804C0 /* Log.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBD9478D203C9032002804C0 /* en */,
-			);
-			name = Log.png;
-			path = "../../../Desktop/tab bar icons";
-			sourceTree = "<group>";
-		};
-		FBD94791203C903A002804C0 /* Team.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBD94790203C903A002804C0 /* en */,
-			);
-			name = Team.png;
-			path = "../../../Desktop/tab bar icons";
-			sourceTree = "<group>";
-		};
-		FBD94794203C903F002804C0 /* Personal.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBD94793203C903F002804C0 /* en */,
-			);
-			name = Personal.png;
-			path = "../../Desktop/tab bar icons";
-			sourceTree = SOURCE_ROOT;
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -454,6 +427,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -503,6 +477,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

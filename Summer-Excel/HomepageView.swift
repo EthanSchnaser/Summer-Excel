@@ -67,6 +67,7 @@ class HomepageView: UIViewController {
         } else {
             enterButton.isEnabled = false
         }
+        
     }
     
     override func viewDidLoad() {

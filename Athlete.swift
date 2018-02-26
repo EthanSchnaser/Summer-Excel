@@ -8,8 +8,7 @@
 
 import UIKit
 
-class Athlete: NSObject, Codable {
-    
+class Athlete: NSObject, NSCoding {
     
     //All the Athlete properties are found here
     var thisName: String = ""
@@ -28,7 +27,39 @@ class Athlete: NSObject, Codable {
         totalMiles = 0
         attendance = 0
     }
+    
+    init(name: String, grade: Int, workoutArray: [Workout], totMi: Double, totTi: Time, attenda: Int, aver: Time)
+    {
+        thisName = name
+        thisGrade = grade
+        workouts = workoutArray
+        totalMiles = totMi
+        totalTime = totTi
+        attendance = attenda
+        averagePace = aver
+        
+    }
 
+    
+    required convenience init?(coder decoder: NSCoder) {
+        let name = decoder.decodeObject(forKey: "thisName") as? String
+        let grade = decoder.decodeInteger(forKey: "thisGrade")
+        let wrkouts = decoder.decodeObject(forKey: "workouts") as! [Workout]
+        let miles = decoder.decodeDouble(forKey: "totalMiles")
+        let totTime = decoder.decodeObject(forKey: "totalTime") as! Time
+        let attend = decoder.decodeInteger(forKey: "attendance")
+        let avP = decoder.decodeObject(forKey: "averagePace") as! Time
+        self.init(name: name!, grade: grade, workoutArray: wrkouts, totMi: miles, totTi: totTime, attenda: attend, aver: avP)
+    }
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.thisName, forKey: "thisName")
+        aCoder.encode(self.thisGrade, forKey: "thisGrade")
+        aCoder.encode(self.workouts, forKey: "workouts")
+        aCoder.encode(self.totalMiles, forKey: "totalMiles")
+        aCoder.encode(self.totalTime, forKey: "totalTime")
+        aCoder.encode(self.attendance, forKey: "attendance")
+        aCoder.encode(self.averagePace, forKey: "averagePace")
+    }
     
     
     
@@ -53,7 +84,10 @@ class Athlete: NSObject, Codable {
         totalMiles = sumMiles
         totalTime = sumTime
         attendance = sumAttendance
-        
+        let timp = Double(totalTime.minutes)
+        let avgMin = Int(timp/totalMiles)
+        let tmp = Time(min: avgMin)
+        averagePace = tmp
     }
     
     
@@ -85,27 +119,7 @@ class Athlete: NSObject, Codable {
         
     }
     
-    func encodeAndDecodeAthlete(athlete: Athlete)
-    {
-        for i in stride(from: 0, to: theTeam.count, by: 1)
-        {
-            let tmp = theTeam[i]
-            for j in stride(from: 0, to: tmp.workouts.count, by: 1)
-            {
-                let tmpWorkout = theTeam[i].workouts[j]
-                tmpWorkout.encodeAndDecodeWorkout(werk: tmpWorkout)
-            }
-        }
-        
-        totalTime.encodeAndDecodeTime(time: totalTime)
-        averagePace.encodeAndDecodeTime(time: averagePace)
-        
-        let encoder = JSONEncoder()
-        let jsonData = try! encoder.encode(athlete)
-        
-        let decoder = JSONDecoder()
-        let werkClone = try! decoder.decode(Athlete.self, from: jsonData)
-    }
+
     
     
 }

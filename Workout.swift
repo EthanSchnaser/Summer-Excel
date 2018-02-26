@@ -8,7 +8,9 @@
 
 import UIKit
 
-class Workout: NSObject, Codable {
+class Workout: NSObject, NSCoding {
+
+    
     
     var milesRan: Double
     //Number of Miles ran. Default: nil
@@ -48,15 +50,26 @@ class Workout: NSObject, Codable {
         
     }
     
-    func encodeAndDecodeWorkout(werk: Workout)
+    required convenience init?(coder decoder: NSCoder)
     {
-        let encoder = JSONEncoder()
-        let jsonData = try! encoder.encode(werk)
-        
-        let decoder = JSONDecoder()
-        let werkClone = try! decoder.decode(Workout.self, from: jsonData)
-        
+        let miles = decoder.decodeDouble(forKey: "milesRan")
+        let timePassed = decoder.decodeObject(forKey: "timeElapsed") as? Time
+        let day = decoder.decodeObject(forKey: "date") as? Date
+        decoder.decodeObject(forKey: "avgMilePace")
+        let word = decoder.decodeObject(forKey: "notes") as? String
+        let Attend = decoder.decodeBool(forKey: "didAttend")
+        self.init(miles: miles, timeE: timePassed!, theDate: day!, words: word!, attend: Attend)
     }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.milesRan, forKey: "milesRan")
+        aCoder.encode(self.timeElapsed, forKey: "timeElapsed")
+        aCoder.encode(self.date, forKey: "date")
+        aCoder.encode(self.avgMilePace, forKey: "avgMilePace")
+        aCoder.encode(self.notes, forKey: "notes")
+        aCoder.encode(self.didAttend, forKey: "didAttend")
+    }
+
     
     
     

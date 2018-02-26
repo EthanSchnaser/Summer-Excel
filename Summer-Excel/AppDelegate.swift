@@ -23,8 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        if let data = UserDefaults.standard.object(forKey: "theTeam") as? NSData
+        {
+            theTeam = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as! [Athlete]
+        }
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

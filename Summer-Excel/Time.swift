@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Time: NSObject, Codable {
+class Time: NSObject, NSCoding {
     //Integer that represents the seconds of the time the time object is representing
     var seconds: Int
     //Integer that represents the minutes of the time the time object is representing
@@ -17,14 +17,7 @@ class Time: NSObject, Codable {
     
 
     
-    //Initializes the seconds, minutes and hours of the time object
-    init(sec: Int, min: Int)
-    {
-        seconds = sec
-        minutes = min
-        
-    }
-    
+
     init(min: Int)
     {
         minutes = min
@@ -33,12 +26,28 @@ class Time: NSObject, Codable {
     
 
     
-    init(min: Int, sec: Int)
+    init(sec: Int, min: Int)
     {
         seconds = 0
         minutes = min
         
     }
+    
+    required convenience init?(coder decoder: NSCoder)
+    {
+        let secs = decoder.decodeInteger(forKey: "seconds")
+        let mins = decoder.decodeInteger(forKey: "minutes")
+        self.init(sec: secs, min: mins)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.seconds, forKey: "seconds")
+        aCoder.encode(self.minutes, forKey: "minutes")
+    }
+    
+    
+    
+    
     //This function will allow a time object to have another time object's instance variables added with their own
     //parameters: time2 = time object that will be added to the object being used to call.
     //return: none
@@ -70,14 +79,7 @@ class Time: NSObject, Codable {
         
     }
     
-    func encodeAndDecodeTime(time: Time)
-    {
-        let encoder = JSONEncoder()
-        let jsonData = try! encoder.encode(time)
-        
-        let decoder = JSONDecoder()
-        let timeClone = try! decoder.decode(Time.self, from: jsonData)
-    }
+
     
 }
 

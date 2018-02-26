@@ -39,11 +39,10 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
         return(cell)
     }
     
-
-    func reload()
-    {
-        tView?.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        tView.reloadData()
     }
+    
 
     //Sorts the theTeam array which then sorts the tableView
     @IBAction func sort(_ sender: Any) {

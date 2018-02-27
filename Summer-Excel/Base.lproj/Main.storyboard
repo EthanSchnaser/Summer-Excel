@@ -500,6 +500,18 @@
                                 <rect key="frame" x="0.0" y="91" width="375" height="528"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqi-0l-zlT">
+                                        <rect key="frame" x="16" y="9" width="146" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="dateEdited:" destination="DmF-hA-eXZ" eventType="editingChanged" id="HsM-ap-PP7"/>
+                                            <action selector="milesEdited:" destination="DmF-hA-eXZ" eventType="editingChanged" id="r7C-XN-ajC"/>
+                                        </connections>
+                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3af-bO-hRW">
                                         <rect key="frame" x="16" y="134" width="70" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -578,20 +590,8 @@
                                             <action selector="minutesEdited:" destination="DmF-hA-eXZ" eventType="editingChanged" id="z74-m9-f7E"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqi-0l-zlT">
-                                        <rect key="frame" x="8" y="8" width="146" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="dateEdited:" destination="DmF-hA-eXZ" eventType="editingChanged" id="HsM-ap-PP7"/>
-                                            <action selector="milesEdited:" destination="DmF-hA-eXZ" eventType="editingChanged" id="r7C-XN-ajC"/>
-                                        </connections>
-                                    </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X4G-Ze-INk">
-                                        <rect key="frame" x="102" y="250" width="240" height="175"/>
+                                        <rect key="frame" x="116" y="262" width="240" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -648,7 +648,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljW-ob-lug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="313" y="-991"/>
+            <point key="canvasLocation" x="312.80000000000001" y="-991.75412293853083"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="afb-1j-c1A">
@@ -835,8 +835,7 @@
         <image name="Team.png" width="60" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CLM-Em-SuP"/>
         <segue reference="VHh-qJ-NPb"/>
-        <segue reference="dJQ-8q-ZGv"/>
+        <segue reference="JuG-nM-2ms"/>
     </inferredMetricsTieBreakers>
 </document>

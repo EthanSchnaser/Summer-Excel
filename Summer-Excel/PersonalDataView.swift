@@ -52,7 +52,9 @@ class PersonalDataView: UIViewController{
         
         //milesButton.text = String(theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan)
         let miles = theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan
-        milesButton.text = String(format: "%f",miles!)
+        let milesStr = "\(miles ?? 0)"
+        milesButton.text = milesStr
+        
         let minutes = theAthlete?.getWorkout(selectedDate: datePicker.date).timeElapsed
         timeButton.text = minutes?.toString()
         //sets the miles and time button to the current value stored for that athlete on that day

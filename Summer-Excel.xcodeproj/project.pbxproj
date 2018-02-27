@@ -23,7 +23,7 @@
 		6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */; };
 		6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */; };
 		6FCD3BB3200E6FC400F80E95 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */; };
-		FBF24B062033555000BE5146 /* CloudKitConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF24B052033555000BE5146 /* CloudKitConnection.swift */; };
+		FB4C1801204489B6002696AA /* GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C1800204489B6002696AA /* GoogleDrive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,7 @@
 		6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
 		6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataView.swift; sourceTree = "<group>"; };
 		6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		FBF24B052033555000BE5146 /* CloudKitConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitConnection.swift; sourceTree = "<group>"; };
+		FB4C1800204489B6002696AA /* GoogleDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDrive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +121,8 @@
 				FB526BC91FDEF6EB00C32B3D /* Functionality Classes */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
-				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
 				6F0653221FD9AF8D009C8587 /* LaunchScreen.storyboard */,
+				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
 				6F0653251FD9AF8D009C8587 /* Info.plist */,
 			);
 			path = "Summer-Excel";
@@ -155,7 +155,6 @@
 				6F521C861FDEFAA200474EE6 /* HomepageView.swift */,
 				57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */,
 				6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */,
-				FBF24B052033555000BE5146 /* CloudKitConnection.swift */,
 			);
 			name = "View Controller Files";
 			sourceTree = "<group>";
@@ -167,6 +166,7 @@
 				6F0653471FD9B07A009C8587 /* Athlete.swift */,
 				6F06534D1FD9B122009C8587 /* Time.swift */,
 				6F1989D41FEAD6A70012B088 /* PersistantAthleteArray.swift */,
+				FB4C1800204489B6002696AA /* GoogleDrive.swift */,
 			);
 			name = "Functionality Classes";
 			sourceTree = "<group>";
@@ -311,10 +311,10 @@
 				6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */,
 				6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */,
 				6F521C871FDEFAA200474EE6 /* HomepageView.swift in Sources */,
+				FB4C1801204489B6002696AA /* GoogleDrive.swift in Sources */,
 				6F0653481FD9B07A009C8587 /* Athlete.swift in Sources */,
 				57C0BFD71FDEF8EF001FD4A6 /* AddTeamatePopUp.swift in Sources */,
 				6FCD3BB3200E6FC400F80E95 /* TableViewCell.swift in Sources */,
-				FBF24B062033555000BE5146 /* CloudKitConnection.swift in Sources */,
 				6F1989D51FEAD6A70012B088 /* PersistantAthleteArray.swift in Sources */,
 				6F06534E1FD9B122009C8587 /* Time.swift in Sources */,
 				6F06531A1FD9AF8D009C8587 /* AppDelegate.swift in Sources */,
@@ -427,6 +427,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -476,6 +477,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -489,7 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.district196.Summer-Excel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -502,7 +504,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.district196.Summer-Excel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

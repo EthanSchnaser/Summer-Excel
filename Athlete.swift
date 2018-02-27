@@ -10,58 +10,57 @@ import UIKit
 
 class Athlete: NSObject, NSCoding {
     
-    
     //All the Athlete properties are found here
-    var thisName: String!
-    var thisGrade: Int! = 0
-    var workouts: [Workout]!
-    var totalMiles: Double! = 0.0
-    var totalTime: Time!
-    var attendance: Int! = 0
-    var averagePace: Time!
+    var thisName: String = ""
+    var thisGrade: Int = 0
+    var workouts: [Workout] = []
+    var totalMiles: Double = 0.0
+    var totalTime: Time = Time(min: 0)
+    var attendance: Int = 0
+    var averagePace: Time = Time(min: 0)
     
-    override init()
-    {
-        thisName = ""
-        thisGrade = 0
-        workouts = [Workout]()
-        totalMiles = 0
-        totalTime = Time(min: 0)
-        attendance = 0
-        averagePace = Time(min: 0)
-        
-    }
+   
     
-    required convenience init(coder decoder: NSCoder) {
-        self.init()
-        self.thisName = decoder.decodeObject(forKey: "thisName") as! String
-        self.thisGrade = decoder.decodeObject(forKey: "thisGrade") as! Int
-        self.workouts = decoder.decodeObject(forKey: "workouts") as! [Workout]
-        self.totalMiles = decoder.decodeObject(forKey: "totalMiles") as! Double
-        self.totalTime = decoder.decodeObject(forKey: "totalTime") as! Time
-        self.attendance = decoder.decodeObject(forKey: "attendance") as! Int
-        self.averagePace = decoder.decodeObject(forKey: "averagePace") as! Time
-    }
-    
-    convenience init(name: String, grade: Int) {
-        self.init()
+    init(name: String, grade: Int) {
         thisName = name
         thisGrade = grade
         totalMiles = 0
         attendance = 0
+    }
+    
+    init(name: String, grade: Int, workoutArray: [Workout], totMi: Double, totTi: Time, attenda: Int, aver: Time)
+    {
+        thisName = name
+        thisGrade = grade
+        workouts = workoutArray
+        totalMiles = totMi
+        totalTime = totTi
+        attendance = attenda
+        averagePace = aver
         
     }
+
     
-    
-    func encode(with aCoder: NSCoder) {
-        if let thisName = thisName {aCoder.encode(thisName, forKey: "thisName")}
-        if let thisGrade = thisGrade {aCoder.encode(thisGrade, forKey: "thisGrade")}
-        if let workouts = workouts {aCoder.encode(workouts, forKey: "workouts")}
-        if let totalMiles = totalMiles {aCoder.encode(totalMiles, forKey: "totalMiles")}
-        if let totalTime = totalTime {aCoder.encode(totalTime, forKey: "totalTime")}
-        if let attendance = attendance {aCoder.encode(attendance, forKey: "attendance")}
-        if let averagePace = averagePace {aCoder.encode(averagePace, forKey: "averagePace")}
+    required convenience init?(coder decoder: NSCoder) {
+        let name = decoder.decodeObject(forKey: "thisName") as? String
+        let grade = decoder.decodeInteger(forKey: "thisGrade")
+        let wrkouts = decoder.decodeObject(forKey: "workouts") as! [Workout]
+        let miles = decoder.decodeDouble(forKey: "totalMiles")
+        let totTime = decoder.decodeObject(forKey: "totalTime") as! Time
+        let attend = decoder.decodeInteger(forKey: "attendance")
+        let avP = decoder.decodeObject(forKey: "averagePace") as! Time
+        self.init(name: name!, grade: grade, workoutArray: wrkouts, totMi: miles, totTi: totTime, attenda: attend, aver: avP)
     }
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.thisName, forKey: "thisName")
+        aCoder.encode(self.thisGrade, forKey: "thisGrade")
+        aCoder.encode(self.workouts, forKey: "workouts")
+        aCoder.encode(self.totalMiles, forKey: "totalMiles")
+        aCoder.encode(self.totalTime, forKey: "totalTime")
+        aCoder.encode(self.attendance, forKey: "attendance")
+        aCoder.encode(self.averagePace, forKey: "averagePace")
+    }
+    
     
     
     //Adds a new workout to the workout array
@@ -71,11 +70,11 @@ class Athlete: NSObject, NSCoding {
         
         //Calculates the total miles, time, attendance, and pace and assigns it to the properties
         var sumMiles = 0.0
-        let sumTime = Time(sec: 0, min: 0, hou: 0)
+        let sumTime = Time(sec: 0, min: 0)
         var sumAttendance = 0
-        let sumPace = Time(sec: 0, min: 0, hou: 0)
+        let sumPace = Time(sec: 0, min: 0)
         for one in workouts {
-            sumMiles += one.milesRan
+            sumMiles = sumMiles + one.milesRan
             sumTime.addTime(time2: one.timeElapsed)
             if one.didAttend {
                 sumAttendance += 1
@@ -85,7 +84,10 @@ class Athlete: NSObject, NSCoding {
         totalMiles = sumMiles
         totalTime = sumTime
         attendance = sumAttendance
-        
+        let timp = Double(totalTime.minutes)
+        let avgMin = Int(timp/totalMiles)
+        let tmp = Time(min: avgMin)
+        averagePace = tmp
     }
     
     
@@ -98,9 +100,9 @@ class Athlete: NSObject, NSCoding {
         
         //Calculates the total weekly miles, time, attendance, and pace
         var sumMiles = 0.0
-        let sumTime = Time(sec: 0, min: 0, hou: 0)
+        let sumTime = Time(sec: 0, min: 0)
         var sumAttendance = 0
-        let sumPace = Time(sec: 0, min: 0, hou: 0)
+        let sumPace = Time(sec: 0, min: 0)
         for each in workouts {
             if (each.date < saturday) && (each.date < sunday) {
                 sumMiles += each.milesRan
@@ -118,7 +120,7 @@ class Athlete: NSObject, NSCoding {
     
     
     func getWorkout(selectedDate: Date) -> Workout {
-        let tmpTime = Time(min: 0, sec: 0 )
+        let tmpTime = Time(sec: 0, min: 0)
         let temp = Workout(miles: 0, timeE: tmpTime, theDate: selectedDate, words: "", attend: false)
     //get method that will return the workout object from theAthelte from the date from the paramter
         let count = theAthlete!.workouts.count
@@ -132,5 +134,8 @@ class Athlete: NSObject, NSCoding {
         return temp
     }
     
+
+    
     
 }
+

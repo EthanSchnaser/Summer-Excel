@@ -53,6 +53,9 @@ class HomepageView: UIViewController {
         attendanceInput.isOn = false
         enabled()
         
+        let data = NSKeyedArchiver.archivedData(withRootObject: theTeam)
+        UserDefaults.standard.set(data, forKey: "theTeam")
+        
         
     }
     
@@ -64,6 +67,7 @@ class HomepageView: UIViewController {
         } else {
             enterButton.isEnabled = false
         }
+        
     }
     
     override func viewDidLoad() {

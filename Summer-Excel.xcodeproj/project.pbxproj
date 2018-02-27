@@ -121,8 +121,8 @@
 				FB526BC91FDEF6EB00C32B3D /* Functionality Classes */,
 				6F0653191FD9AF8D009C8587 /* AppDelegate.swift */,
 				6F06531D1FD9AF8D009C8587 /* Main.storyboard */,
-				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
 				6F0653221FD9AF8D009C8587 /* LaunchScreen.storyboard */,
+				6F0653201FD9AF8D009C8587 /* Assets.xcassets */,
 				6F0653251FD9AF8D009C8587 /* Info.plist */,
 			);
 			path = "Summer-Excel";
@@ -427,6 +427,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -476,6 +477,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -489,7 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.district196.Summer-Excel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -502,7 +504,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.district196.Summer-Excel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

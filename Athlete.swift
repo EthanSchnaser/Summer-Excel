@@ -118,19 +118,23 @@ class Athlete: NSObject, NSCoding {
         return (sumMiles, sumTime, sumAttendance, sumPace)
     }
     
-    
+    //get method that will return the workout object from theAthelte from the date from the paramter
     func getWorkout(selectedDate: Date) -> Workout {
         let tmpTime = Time(sec: 0, min: 0)
-        let temp = Workout(miles: 0, timeE: tmpTime, theDate: selectedDate, words: "", attend: false)
-    //get method that will return the workout object from theAthelte from the date from the paramter
+        var temp = Workout(miles: 0, timeE: tmpTime, theDate: selectedDate, words: "temp workout", attend: false)
         let count = theAthlete!.workouts.count
         for i in stride(from: 0, to: count, by: 1)
         {
-            if(selectedDate == theAthlete?.workouts[i].date)
+            print ( i )
+            if(theAthlete?.workouts[i].date != selectedDate)
             {
-                return (theAthlete?.workouts[i])!
+                print ("inside if loop")
+                temp = (theAthlete?.workouts[i])!
             }
+    
         }
+        print (theAthlete?.workouts[0].milesRan)
+        //print ( i )
         return temp
     }
     

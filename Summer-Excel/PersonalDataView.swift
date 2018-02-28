@@ -19,6 +19,7 @@ class PersonalDataView: UIViewController{
     @IBOutlet weak var weeklyStatsPU: UIButton!
     @IBOutlet weak var totalStatsPU: UIButton!
     @IBOutlet weak var noteSection: UITextView!
+
     
     @IBAction func changeDate(_ sender: AnyObject) {
         let dateFormatter = DateFormatter()
@@ -27,12 +28,20 @@ class PersonalDataView: UIViewController{
         self.runDate.text = strDate
         //everytime the date is changed in the datePicker, the label changes with it.
         let miles = theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan
-        milesButton.text = String(format: "%f",miles!)
+        let milesStr = "\(miles ?? 0)"
+        milesButton.text = milesStr
         let minutes = theAthlete?.getWorkout(selectedDate: datePicker.date).timeElapsed
         timeButton.text = minutes?.toString()
         noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
         //sets the miles, time and notes section to the current value stored for that athlete on that day
+        
+        print ( datePicker.date )
+        print ( theAthlete?.workouts[0].date )
+        
     }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,11 +74,14 @@ class PersonalDataView: UIViewController{
         
         //let updatedWorkout = Workout(miles: <#T##Double#>, timeE: <#T##Time#>, theDate: <#T##Date#>, words: <#T##String#>, attend: <#T##Bool#>)
         
-        
-        
+
+
+
+    
         
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

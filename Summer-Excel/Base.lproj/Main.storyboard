@@ -199,6 +199,10 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5x6-pG-Gf8" appends="YES" id="aWR-W1-MAB"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" tag="-1" title="Personal" image="Personal" selectedImage="Personal.png" id="KJr-6c-SNl">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
@@ -214,6 +218,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORi-eu-v9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5x6-pG-Gf8"/>
             </objects>
             <point key="canvasLocation" x="-324" y="-388"/>
         </scene>
@@ -835,6 +840,7 @@
         <image name="Team.png" width="60" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="CLM-Em-SuP"/>
         <segue reference="VHh-qJ-NPb"/>
         <segue reference="JuG-nM-2ms"/>
     </inferredMetricsTieBreakers>

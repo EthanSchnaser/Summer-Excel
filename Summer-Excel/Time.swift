@@ -65,18 +65,28 @@ class Time: NSObject, NSCoding {
     //return = String of letters and numbers representing the time the time object holds
     func toString() -> String
     {
-        let min = "\(minutes)"
+        let min: String
+        if seconds < 10
+        {
+        min = "\(minutes):0\(seconds)"
+        }
+        else
+        {
+        min = "\(minutes):\(seconds)"
+        }
         return min
     }
     
     //Divides the time object by a double using floating point arithmetic
     func divideTime(number: Double) -> Time
     {
-        let Result = Time(min: minutes)
         let num = Int(number)
-        Result.minutes = minutes/num
-        return Result
-        
+        let secondsTotal = (minutes * 60) + seconds
+        let averageTotalSeconds = secondsTotal/num
+        let averagePaceMinutes = averageTotalSeconds/60
+        let averagePaceSeconds = secondsTotal % num
+        let result = Time(sec: averagePaceSeconds, min: averagePaceMinutes)
+        return result
     }
     
 

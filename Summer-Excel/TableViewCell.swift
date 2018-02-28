@@ -12,9 +12,8 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var totalMiles: UILabel!
-    @IBOutlet weak var averagePace: UILabel!
     @IBOutlet weak var grade: UILabel!
-
-
+    @IBOutlet weak var averagePace: UILabel!
+    
     
 }

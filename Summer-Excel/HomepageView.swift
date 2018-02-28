@@ -10,6 +10,7 @@ import UIKit
 
 class HomepageView: UIViewController {
     
+    @IBOutlet weak var secondInput: UITextField!
     @IBOutlet weak var mileInput: UITextField!
     @IBOutlet weak var minuteInput: UITextField!
     @IBOutlet weak var notesInput: UITextView!
@@ -36,9 +37,11 @@ class HomepageView: UIViewController {
         //casts the buttons to usable variables
         let theseMiles = Double(mileInput.text!)
         let theseMinutes = Int(minuteInput.text!)
-        let thisTime = Time(min: theseMinutes!)
+        let theseSeconds = Int(secondInput.text!)
+        let thisTime = Time(sec: theseSeconds!, min: theseMinutes!)
         let theseNotes = notesInput.text
         let attended = attendanceInput.isOn
+        
         
         //creates the workout for this log
         let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended)
@@ -50,6 +53,7 @@ class HomepageView: UIViewController {
         mileInput.text = nil
         minuteInput.text = nil
         notesInput.text = nil
+        secondInput.text = nil
         attendanceInput.isOn = false
         enabled()
         

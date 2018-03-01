@@ -34,9 +34,7 @@ class PersonalDataView: UIViewController{
         timeButton.text = minutes?.toString()
         noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
         //sets the miles, time and notes section to the current value stored for that athlete on that day
-        
-        print ( datePicker.date )
-        print ( theAthlete?.workouts[0].date )
+    
         
     }
     
@@ -70,13 +68,6 @@ class PersonalDataView: UIViewController{
         noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
         
         
-        
-        
-        //let updatedWorkout = Workout(miles: <#T##Double#>, timeE: <#T##Time#>, theDate: <#T##Date#>, words: <#T##String#>, attend: <#T##Bool#>)
-        
-
-
-
     
         
     }

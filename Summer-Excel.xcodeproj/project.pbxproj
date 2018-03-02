@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57C0BFD71FDEF8EF001FD4A6 /* AddTeamatePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */; };
+		57D97AF62049BF6900BCEC0D /* WeeklyStatsPUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D97AF52049BF6900BCEC0D /* WeeklyStatsPUViewController.swift */; };
 		57DB0C17204873BC002CEE90 /* TotalStatsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DB0C16204873BC002CEE90 /* TotalStatsPopUpViewController.swift */; };
 		6F06531A1FD9AF8D009C8587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0653191FD9AF8D009C8587 /* AppDelegate.swift */; };
 		6F06531F1FD9AF8D009C8587 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F06531D1FD9AF8D009C8587 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamatePopUp.swift; sourceTree = "<group>"; };
+		57D97AF52049BF6900BCEC0D /* WeeklyStatsPUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStatsPUViewController.swift; sourceTree = "<group>"; };
 		57DB0C16204873BC002CEE90 /* TotalStatsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStatsPopUpViewController.swift; sourceTree = "<group>"; };
 		6F0653161FD9AF8D009C8587 /* Summer-Excel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Summer-Excel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0653191FD9AF8D009C8587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */,
 				6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */,
 				57DB0C16204873BC002CEE90 /* TotalStatsPopUpViewController.swift */,
+				57D97AF52049BF6900BCEC0D /* WeeklyStatsPUViewController.swift */,
 				6F521C861FDEFAA200474EE6 /* HomepageView.swift */,
 				57C0BFD61FDEF8EF001FD4A6 /* AddTeamatePopUp.swift */,
 				6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */,
@@ -321,6 +324,7 @@
 				6F1989D51FEAD6A70012B088 /* PersistantAthleteArray.swift in Sources */,
 				6F06534E1FD9B122009C8587 /* Time.swift in Sources */,
 				6F06531A1FD9AF8D009C8587 /* AppDelegate.swift in Sources */,
+				57D97AF62049BF6900BCEC0D /* WeeklyStatsPUViewController.swift in Sources */,
 				57DB0C17204873BC002CEE90 /* TotalStatsPopUpViewController.swift in Sources */,
 				6F2852E4202235FD00077CA4 /* LoginScreen.swift in Sources */,
 				6F06534A1FD9B088009C8587 /* Workout.swift in Sources */,

@@ -20,6 +20,7 @@ class PersonalDataView: UIViewController{
     @IBOutlet weak var totalStatsPU: UIButton!
     @IBOutlet weak var noteSection: UITextView!
 
+    @IBOutlet weak var editButton: UIView!
     
     @IBAction func changeDate(_ sender: AnyObject) {
         let dateFormatter = DateFormatter()
@@ -68,7 +69,6 @@ class PersonalDataView: UIViewController{
         noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
         
         
-    
         
     }
 

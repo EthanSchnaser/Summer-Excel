@@ -20,7 +20,6 @@ class PersonalDataView: UIViewController{
     @IBOutlet weak var totalStatsPU: UIButton!
     @IBOutlet weak var noteSection: UITextView!
 
-    @IBOutlet weak var editButton: UIView!
     
     @IBAction func changeDate(_ sender: AnyObject) {
         let dateFormatter = DateFormatter()
@@ -39,7 +38,39 @@ class PersonalDataView: UIViewController{
         
     }
     
+
+    @IBAction func editWorkout(_ sender: Any) {
+        
+        milesButton.isEnabled = true
+        timeButton.isEnabled = true
+        if (noteSection.text == "No Workout Logged") {
+            noteSection.text = ""
+        }
+        noteSection.isEditable = true
+        
+    }
     
+    
+    @IBAction func doneEditing(_ sender: Any) {
+        
+        //casts the buttons to usable variables
+        //let theseMiles =
+       // let theseMinutes =
+       // let thisTime =
+       // let theseNotes =
+       //let attended =
+        
+        //creates the workout for this log
+       // let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended)
+
+        
+        
+        milesButton.isEnabled = false
+        timeButton.isEnabled = false
+        noteSection.isEditable = false
+        
+        
+    }
     
     
     override func viewDidLoad() {
@@ -67,6 +98,11 @@ class PersonalDataView: UIViewController{
         timeButton.text = minutes?.toString()
         //sets the miles and time button to the current value stored for that athlete on that day
         noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
+        
+        milesButton.isEnabled = false
+        timeButton.isEnabled = false
+        noteSection.isEditable = false
+        
         
         
         

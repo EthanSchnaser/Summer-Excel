@@ -178,16 +178,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-eL-kwU">
-                                        <rect key="frame" x="13" y="322" width="81" height="30"/>
+                                        <rect key="frame" x="8" y="322" width="81" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <action selector="editWorkout:" destination="4Q5-JY-ebO" eventType="touchUpInside" id="Mgp-8K-QJ8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PN-zG-SSj">
                                         <rect key="frame" x="210" y="322" width="86" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="doneEditing:" destination="4Q5-JY-ebO" eventType="touchUpInside" id="itJ-qf-ow7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -221,7 +227,6 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="datePicker" destination="DpP-ZC-fhU" id="o6s-HV-Z3Y"/>
-                        <outlet property="editButton" destination="KBP-0d-F5q" id="qBt-gA-p3V"/>
                         <outlet property="milesButton" destination="KVu-VP-3Pr" id="HH2-1t-zsk"/>
                         <outlet property="noteSection" destination="Ce2-v0-UuN" id="4RO-YC-PgS"/>
                         <outlet property="runDate" destination="LuD-8m-h7P" id="fpA-3a-3AE"/>

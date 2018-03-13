@@ -58,22 +58,10 @@ class PersonalDataView: UIViewController{
        let theseMinutes = Int(timeButton.text!)
        let thisTime = Time(min: theseMinutes!)
        let theseNotes = noteSection.text
-       let attended = theAthlete?.getWorkout(selectedDate: datePicker.date).didAttend
-        
-        //creates the workout for this log
-        let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended!)
-        //creates a temporary workout incase "i" doesnt find anything or if the array is empty
-        let tmpTime = Time(sec: 0, min: 0)
-        let temp = Workout(miles: 0, timeE: tmpTime, theDate: datePicker.date, words: "No Workout Logged", attend: false)
-        
-        //sets the workout from the selected date to thisWorkout
-        let todaysWorkout = theAthlete?.getWorkout(selectedDate: datePicker.date)
-        let i = theAthlete?.index(of: todaysWorkout) {
-            theAthlete[i] = thisWorkout
-        }
-        
-
-        
+       
+        theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan = theseMiles!
+        theAthlete?.getWorkout(selectedDate: datePicker.date).timeElapsed = thisTime
+        theAthlete?.getWorkout(selectedDate: datePicker.date).notes = theseNotes!
         
         milesButton.isEnabled = false
         timeButton.isEnabled = false

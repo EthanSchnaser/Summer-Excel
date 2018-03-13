@@ -17,6 +17,9 @@ class HomepageView: UIViewController {
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var dateInput: UITextField!
     let datePicker = UIDatePicker()
+    @IBOutlet weak var changeTeamateButton: UIButton!
+    
+    
     
     @IBAction func milesEdited(_ sender: Any) {
         enabled()
@@ -79,6 +82,7 @@ class HomepageView: UIViewController {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         let strDate = dateFormatter.string(from: self.datePicker.date)
         dateInput.text = strDate
+
 
    
         

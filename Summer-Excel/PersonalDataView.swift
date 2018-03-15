@@ -20,7 +20,7 @@ class PersonalDataView: UIViewController{
     @IBOutlet weak var totalStatsPU: UIButton!
     @IBOutlet weak var noteSection: UITextView!
 
-    
+    /**
     @IBAction func changeDate(_ sender: AnyObject) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -34,11 +34,11 @@ class PersonalDataView: UIViewController{
         timeButton.text = minutes?.toString()
         noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
         //sets the miles, time and notes section to the current value stored for that athlete on that day
-    
+    **/
         
     }
     
-
+/**
     @IBAction func editWorkout(_ sender: Any) {
         
         milesButton.isEnabled = true
@@ -49,8 +49,9 @@ class PersonalDataView: UIViewController{
         noteSection.isEditable = true
         
     }
-    
-    
+    **/
+
+    /**
     @IBAction func doneEditing(_ sender: Any) {
         
         //casts the buttons to usable variables
@@ -68,8 +69,9 @@ class PersonalDataView: UIViewController{
         noteSection.isEditable = false
         
     }
-    
-    
+    **/
+
+/**
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -104,13 +106,13 @@ class PersonalDataView: UIViewController{
         
         
     }
-
+**/
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+func didReceiveMemoryWarning() {
+        //super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     
     
-    }
+

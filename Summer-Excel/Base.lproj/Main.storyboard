@@ -692,6 +692,11 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="JuG-nM-2ms"/>
                                         </connections>
                                     </button>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Gi-Sq-kZc">
+                                        <rect key="frame" x="170" y="8" width="197" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.016638342935197947" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -722,6 +727,7 @@
                         <outlet property="mileInput" destination="or0-6X-vbt" id="srK-y0-tSq"/>
                         <outlet property="minuteInput" destination="M3X-BF-zeQ" id="3MG-YQ-kzO"/>
                         <outlet property="notesInput" destination="X4G-Ze-INk" id="a40-ha-dqV"/>
+                        <outlet property="workoutPicker" destination="0Gi-Sq-kZc" id="tLa-l8-1XJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljW-ob-lug" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomepageView: UIViewController {
+class HomepageView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var mileInput: UITextField!
     @IBOutlet weak var minuteInput: UITextField!
@@ -18,6 +18,33 @@ class HomepageView: UIViewController {
     @IBOutlet weak var dateInput: UITextField!
     let datePicker = UIDatePicker()
     @IBOutlet weak var changeTeamateButton: UIButton!
+    @IBOutlet weak var workoutPicker: UIPickerView!
+    
+
+    var workoutArr: [Workout] = []
+    
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let str = "Workout \(row)"
+        return str
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        let workoutArr: [Workout] = (theAthlete?.getWorkoutArray(selectedDate: datePicker.date))!
+        return workoutArr.count
+    }
+    
+    
+    
+    
+    
+    
     
     
     

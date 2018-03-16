@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
+class TeamDataView: SwipableTabVC, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var tView: UITableView!
     @IBOutlet weak var topLabel: UINavigationBar!
     
@@ -96,7 +96,7 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
 
     
     @IBAction func exportCsvFile(_ sender: Any) {
-        var csvText: [String] = ["First Name,Last Name,Grade,Total Miles,Average Pace,Total Time,ExcelAttendence\r\n"]
+        var csvText: [String] = [",First Name,Last Name,Grade,Total Miles,Average Pace,Total Time,ExcelAttendence\n"]
         let fileName = "Runners.csv"
         //let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
 
@@ -109,10 +109,10 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
             let last = tmp.thisName.components(separatedBy: " ").last!
             let grade = tmp.thisGrade
             let miles = tmp.totalMiles
-            let pace = tmp.averagePace
-            let time = tmp.totalTime
+            let pace = tmp.averagePace.toString()
+            let time = tmp.totalTime.toString()
             let excelAtt = tmp.attendance
-            let newLine = "\(first),\(last),\(grade),\(miles),\(pace),\(time),\(excelAtt)\r\n"
+            let newLine = "\(first),\(last),\(grade),\(miles),\(pace),\(time),\(excelAtt)\n"
             csvText.append(newLine)
         }
             let inputString = csvText.joined(separator: ",")
@@ -161,11 +161,11 @@ class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate
             
                     }
         
-        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?)
-        {
-            controller.dismiss(animated: true, completion: nil)
-        }
 
+    }
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?)
+    {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

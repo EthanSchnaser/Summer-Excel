@@ -6,7 +6,7 @@
 //  Copyright © 2017 DIstrict 196. All rights reserved.
 //
 
-//Global array that contains the while team
+//Global array that contains the while team.
 var theTeam: [Athlete] = []
 
 //Global variable for the athlete currently logged in

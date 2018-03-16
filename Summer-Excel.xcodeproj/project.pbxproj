@@ -23,6 +23,7 @@
 		6F521C891FDEFAB400474EE6 /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */; };
 		6F521C8B1FDEFAC200474EE6 /* TeamDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */; };
 		6FCD3BB3200E6FC400F80E95 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */; };
+		6FD5ABC0205C269000A5C924 /* SwipeableTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD5ABBF205C269000A5C924 /* SwipeableTabVC.swift */; };
 		FB4C1801204489B6002696AA /* GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4C1800204489B6002696AA /* GoogleDrive.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		6F521C881FDEFAB400474EE6 /* PersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
 		6F521C8A1FDEFAC200474EE6 /* TeamDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataView.swift; sourceTree = "<group>"; };
 		6FCD3BB1200E6FC400F80E95 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		6FD5ABBF205C269000A5C924 /* SwipeableTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableTabVC.swift; sourceTree = "<group>"; };
 		FB4C1800204489B6002696AA /* GoogleDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDrive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 				6F06534D1FD9B122009C8587 /* Time.swift */,
 				6F1989D41FEAD6A70012B088 /* PersistantAthleteArray.swift */,
 				FB4C1800204489B6002696AA /* GoogleDrive.swift */,
+				6FD5ABBF205C269000A5C924 /* SwipeableTabVC.swift */,
 			);
 			name = "Functionality Classes";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				TargetAttributes = {
 					6F0653151FD9AF8D009C8587 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = CGUG74Z8V2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -318,6 +322,7 @@
 				6F1989D51FEAD6A70012B088 /* PersistantAthleteArray.swift in Sources */,
 				6F06534E1FD9B122009C8587 /* Time.swift in Sources */,
 				6F06531A1FD9AF8D009C8587 /* AppDelegate.swift in Sources */,
+				6FD5ABC0205C269000A5C924 /* SwipeableTabVC.swift in Sources */,
 				6F2852E4202235FD00077CA4 /* LoginScreen.swift in Sources */,
 				6F06534A1FD9B088009C8587 /* Workout.swift in Sources */,
 			);
@@ -421,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -473,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -487,9 +492,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CGUG74Z8V2;
 				INFOPLIST_FILE = "Summer-Excel/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.district196.Summer-Excel";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.Identifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -500,9 +506,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CGUG74Z8V2;
 				INFOPLIST_FILE = "Summer-Excel/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.district196.Summer-Excel";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.Identifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

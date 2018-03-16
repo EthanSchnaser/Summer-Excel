@@ -50,29 +50,28 @@ class PersonalDataView: UIViewController {
         
     }
     
+
     
     @IBAction func doneEditing(_ sender: Any) {
         
         //casts the buttons to usable variables
-        //let theseMiles =
-       // let theseMinutes =
-       // let thisTime =
-       // let theseNotes =
-       //let attended =
-        
-        //creates the workout for this log
-       // let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended)
-
-        
+       let theseMiles = Double(milesButton.text!)
+       let theseMinutes = Int(timeButton.text!)
+       let thisTime = Time(min: theseMinutes!)
+       let theseNotes = noteSection.text
+       
+        theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan = theseMiles!
+        theAthlete?.getWorkout(selectedDate: datePicker.date).timeElapsed = thisTime
+        theAthlete?.getWorkout(selectedDate: datePicker.date).notes = theseNotes!
         
         milesButton.isEnabled = false
         timeButton.isEnabled = false
         noteSection.isEditable = false
         
-        
     }
     
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -110,10 +109,11 @@ class PersonalDataView: UIViewController {
 
     
     override func didReceiveMemoryWarning() {
+    
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     
-    
-    }
+}
+

@@ -17,6 +17,30 @@ class HomepageView: UIViewController{
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var dateInput: UITextField!
     let datePicker = UIDatePicker()
+    @IBOutlet weak var changeTeamateButton: UIButton!
+    @IBOutlet weak var workoutPicker: UIPickerView!
+    
+
+    var workoutArr: [Workout] = []
+    
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let str = "Workout \(row)"
+        return str
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        //let workoutArr: [Workout] = (theAthlete?.getWorkoutArray(selectedDate: datePicker.date))!
+        return workoutArr.count
+    }
+    
+    
     
     @IBAction func milesEdited(_ sender: Any) {
         enabled()
@@ -82,6 +106,7 @@ class HomepageView: UIViewController{
         dateFormatter.dateFormat = "MM/dd/yyyy"
         let strDate = dateFormatter.string(from: self.datePicker.date)
         dateInput.text = strDate
+
 
    
         

@@ -459,7 +459,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lPo-ZY-k1E" id="lfZ-OY-bBC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dG-qq-8SX">
@@ -651,17 +651,6 @@
                                             <action selector="pressEnter:" destination="DmF-hA-eXZ" eventType="touchUpInside" id="yPu-aD-nAT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic3-vP-dVl">
-                                        <rect key="frame" x="200" y="8" width="156" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Change Teammate">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="JuG-nM-2ms"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wC5-P7-h51">
                                         <rect key="frame" x="14" y="54" width="74.5" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -760,6 +749,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="attendanceInput" destination="20C-6Q-Fmm" id="5yX-fn-VO6"/>
+                        <outlet property="changeTeamateButton" destination="Ic3-vP-dVl" id="S0v-X6-Qe8"/>
                         <outlet property="dateInput" destination="uqi-0l-zlT" id="KjM-1C-8cp"/>
                         <outlet property="enterButton" destination="jZo-da-vha" id="zel-co-mhc"/>
                         <outlet property="mileInput" destination="or0-6X-vbt" id="srK-y0-tSq"/>
@@ -957,7 +947,6 @@
         <image name="Team.png" width="60" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CLM-Em-SuP"/>
         <segue reference="VHh-qJ-NPb"/>
         <segue reference="JuG-nM-2ms"/>
     </inferredMetricsTieBreakers>

@@ -17,8 +17,7 @@ class HomepageView: UIViewController{
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var dateInput: UITextField!
     let datePicker = UIDatePicker()
-    let dateFormatter = DateFormatter()
-
+    
     @IBAction func milesEdited(_ sender: Any) {
         enabled()
     }
@@ -28,10 +27,13 @@ class HomepageView: UIViewController{
     }
     
     @IBAction func dateEdited(_ sender: Any) {
-        dateInput.text = dateFormatter.string(from: datePicker.date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateInput.text = dateFormatter.string(from: self.datePicker.date)
+        
     }
     
-    
+  
     @IBAction func pressEnter(_ sender: Any) {
         //casts the buttons to usable variables
         let theseMiles = Double(mileInput.text!)
@@ -63,7 +65,6 @@ class HomepageView: UIViewController{
     }
     
     
-    
     func enabled() {
         if (mileInput.hasText && minuteInput.hasText) {
             enterButton.isEnabled = true
@@ -77,7 +78,13 @@ class HomepageView: UIViewController{
         super.viewDidLoad()
         datePicker.datePickerMode = UIDatePickerMode.date
         dateInput.inputView = datePicker
-        dateInput.text = dateFormatter.string(from: datePicker.date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let strDate = dateFormatter.string(from: self.datePicker.date)
+        dateInput.text = strDate
+
+   
+        
     }
     
     }

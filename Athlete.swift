@@ -118,18 +118,25 @@ class Athlete: NSObject, NSCoding {
         return (sumMiles, sumTime, sumAttendance, sumPace)
     }
     
-    
+    //get method that will return the workout object from theAthelte from the date from the paramter
     func getWorkout(selectedDate: Date) -> Workout {
         let tmpTime = Time(sec: 0, min: 0)
-        let temp = Workout(miles: 0, timeE: tmpTime, theDate: selectedDate, words: "", attend: false)
-    //get method that will return the workout object from theAthelte from the date from the paramter
+        //creates a temporary variable that will be the defualt if no workout matches the parameter
+        var temp = Workout(miles: 0, timeE: tmpTime, theDate: selectedDate, words: "No Workout Logged", attend: false)
         let count = theAthlete!.workouts.count
         for i in stride(from: 0, to: count, by: 1)
         {
-            if(selectedDate == theAthlete?.workouts[i].date)
+            //creates two strings that represents the dates from the parameter and a workout object so they can be compared in the if statement
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            let workoutSTR = dateFormatter.string(from: (theAthlete?.workouts[i].date)! )
+            let selectedDateSTR = dateFormatter.string(from: selectedDate)
+            if(workoutSTR == selectedDateSTR )
             {
-                return (theAthlete?.workouts[i])!
+                // sets a temp wokrout object to the workout that has the same date as the parameter
+                temp = (theAthlete?.workouts[i])!
             }
+    
         }
         return temp
     }

@@ -19,6 +19,7 @@ class PersonalDataView: UIViewController {
     @IBOutlet weak var weeklyStatsPU: UIButton!
     @IBOutlet weak var totalStatsPU: UIButton!
     @IBOutlet weak var noteSection: UITextView!
+
     
     @IBAction func changeDate(_ sender: AnyObject) {
         let dateFormatter = DateFormatter()
@@ -27,12 +28,50 @@ class PersonalDataView: UIViewController {
         self.runDate.text = strDate
         //everytime the date is changed in the datePicker, the label changes with it.
         let miles = theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan
-        milesButton.text = String(format: "%f",miles!)
+        let milesStr = "\(miles ?? 0)"
+        milesButton.text = milesStr
         let minutes = theAthlete?.getWorkout(selectedDate: datePicker.date).timeElapsed
         timeButton.text = minutes?.toString()
         noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
         //sets the miles, time and notes section to the current value stored for that athlete on that day
+    
+        
     }
+    
+
+    @IBAction func editWorkout(_ sender: Any) {
+        
+        milesButton.isEnabled = true
+        timeButton.isEnabled = true
+        if (noteSection.text == "No Workout Logged") {
+            noteSection.text = ""
+        }
+        noteSection.isEditable = true
+        
+    }
+    
+    
+    @IBAction func doneEditing(_ sender: Any) {
+        
+        //casts the buttons to usable variables
+        //let theseMiles =
+       // let theseMinutes =
+       // let thisTime =
+       // let theseNotes =
+       //let attended =
+        
+        //creates the workout for this log
+       // let thisWorkout = Workout(miles: theseMiles!, timeE: thisTime, theDate: Date(), words: theseNotes!, attend: attended)
+
+        
+        
+        milesButton.isEnabled = false
+        timeButton.isEnabled = false
+        noteSection.isEditable = false
+        
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,16 +99,16 @@ class PersonalDataView: UIViewController {
         //sets the miles and time button to the current value stored for that athlete on that day
         noteSection.text = theAthlete?.getWorkout(selectedDate: datePicker.date).notes
         
-        
-        
-        
-        //let updatedWorkout = Workout(miles: <#T##Double#>, timeE: <#T##Time#>, theDate: <#T##Date#>, words: <#T##String#>, attend: <#T##Bool#>)
+        milesButton.isEnabled = false
+        timeButton.isEnabled = false
+        noteSection.isEditable = false
         
         
         
         
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

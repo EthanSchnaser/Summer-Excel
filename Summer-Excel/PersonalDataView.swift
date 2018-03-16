@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class PersonalDataView: SwipableTabVC {
+class PersonalDataView: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var runDate: UILabel!

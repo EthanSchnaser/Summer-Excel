@@ -8,8 +8,7 @@
 
 import UIKit
 
-class HomepageView: SwipableTabVC {
-    
+class HomepageView: UIViewController{ 
     @IBOutlet weak var secondInput: UITextField!
     @IBOutlet weak var mileInput: UITextField!
     @IBOutlet weak var minuteInput: UITextField!

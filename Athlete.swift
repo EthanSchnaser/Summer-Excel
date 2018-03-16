@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Athlete: NSObject, NSCoding {
+class Athlete: NSObject, NSCoding  {
     
     //All the Athlete properties are found here
     var thisName: String = ""
@@ -143,27 +143,31 @@ class Athlete: NSObject, NSCoding {
     }
     
     
-    func getWorkout(selectedDate: Date) -> Array<Workout> {
+    func getWorkout(selectedDate: Date) -> Workout {
         
-        var arr: [Workout] = []
-        
+        //creates a temporary workout object
+        let tempTime: Time = Time(min: 0)
+        var temp: Workout = Workout(miles: 0.0, timeE: tempTime, theDate: selectedDate, words: "No Workout Logged", attend: false )
         
         let count = theAthlete!.workouts.count
         for i in stride(from: 0, to: count, by: 1)
         {
+
             //creates two strings that represents the dates from the parameter and a workout object so they can be compared in the if statement
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy"
             let workoutSTR = dateFormatter.string(from: (theAthlete?.workouts[i].date)! )
             let selectedDateSTR = dateFormatter.string(from: selectedDate)
+            
             if(workoutSTR == selectedDateSTR )
             {
                 // sets a temp wokrout object to the workout that has the same date as the parameter
-                arr.append((theAthlete?.workouts[i])!)
+                temp = (theAthlete?.workouts[i])!
             }
             
         }
-        return arr
+        
+        return temp
     }
     
     

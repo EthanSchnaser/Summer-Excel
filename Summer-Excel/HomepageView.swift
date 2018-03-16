@@ -36,15 +36,9 @@ class HomepageView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        let workoutArr: [Workout] = (theAthlete?.getWorkoutArray(selectedDate: datePicker.date))!
+        //let workoutArr: [Workout] = (theAthlete?.getWorkoutArray(selectedDate: datePicker.date))!
         return workoutArr.count
     }
-    
-    
-    
-    
-    
-    
     
     
     

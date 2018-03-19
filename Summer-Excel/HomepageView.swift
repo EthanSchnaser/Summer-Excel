@@ -8,8 +8,8 @@
 
 import UIKit
 
-class HomepageView: UIViewController{ 
-    @IBOutlet weak var secondInput: UITextField!
+class HomepageView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet weak var mileInput: UITextField!
     @IBOutlet weak var minuteInput: UITextField!
     @IBOutlet weak var notesInput: UITextView!
@@ -19,13 +19,15 @@ class HomepageView: UIViewController{
     let datePicker = UIDatePicker()
     @IBOutlet weak var changeTeamateButton: UIButton!
     @IBOutlet weak var workoutPicker: UIPickerView!
+    @IBOutlet weak var secondInput: UITextField!
+    @IBInspectable var defaultIndex: Int = 0
     
 
     var workoutArr: [Workout] = []
     
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 1 
     }
     
     
@@ -105,11 +107,7 @@ class HomepageView: UIViewController{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         let strDate = dateFormatter.string(from: self.datePicker.date)
-        dateInput.text = strDate
 
-
-   
-        
     }
     
     }

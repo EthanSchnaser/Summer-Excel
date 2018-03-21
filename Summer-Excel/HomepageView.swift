@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomepageView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class HomepageView: SwipableTabVC, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var mileInput: UITextField!
     @IBOutlet weak var minuteInput: UITextField!

@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class TeamDataView: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
+class TeamDataView: SwipableTabVC, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var tView: UITableView!
     @IBOutlet weak var topLabel: UINavigationBar!
     

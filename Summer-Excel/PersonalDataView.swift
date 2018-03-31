@@ -39,37 +39,6 @@ class PersonalDataView: SwipableTabVC {
     }
     
 
-    @IBAction func editWorkout(_ sender: Any) {
-        
-        milesButton.isEnabled = true
-        timeButton.isEnabled = true
-        if (noteSection.text == "No Workout Logged") {
-            noteSection.text = ""
-        }
-        noteSection.isEditable = true
-        
-    }
-    
-
-    
-    @IBAction func doneEditing(_ sender: Any) {
-        
-        //casts the buttons to usable variables
-       let theseMiles = Double(milesButton.text!)
-       let theseMinutes = Int(timeButton.text!)
-        //fatal error if done is pressed with a time of 0:00
-       let thisTime = Time(min: theseMinutes!)
-       let theseNotes = noteSection.text
-       
-        theAthlete?.getWorkout(selectedDate: datePicker.date).milesRan = theseMiles!
-        theAthlete?.getWorkout(selectedDate: datePicker.date).timeElapsed = thisTime
-        theAthlete?.getWorkout(selectedDate: datePicker.date).notes = theseNotes!
-        
-        milesButton.isEnabled = false
-        timeButton.isEnabled = false
-        noteSection.isEditable = false
-        
-    }
     
 
 

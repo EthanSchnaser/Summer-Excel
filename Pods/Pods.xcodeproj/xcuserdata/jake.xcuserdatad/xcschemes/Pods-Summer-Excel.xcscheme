@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9825AE5C597813D506BB97D6A1A5CAF"
+               BlueprintIdentifier = "3FB7EA2762FF89DA96530DD535C0CD28"
                BuildableName = "Pods_Summer_Excel.framework"
                BlueprintName = "Pods-Summer-Excel"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E9825AE5C597813D506BB97D6A1A5CAF"
+            BlueprintIdentifier = "3FB7EA2762FF89DA96530DD535C0CD28"
             BuildableName = "Pods_Summer_Excel.framework"
             BlueprintName = "Pods-Summer-Excel"
             ReferencedContainer = "container:Pods.xcodeproj">

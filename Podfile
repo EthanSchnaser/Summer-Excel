@@ -8,7 +8,7 @@ target 'Summer-Excel' do
   # Pods for Summer-Excel
 pod ‘Firebase/Core’
 pod ‘Firebase/Database’
-
+pod ‘JTAppleCalendar’, ‘~> 7.0’
 
   target 'Summer-ExcelTests' do
     inherit! :search_paths

@@ -106,7 +106,7 @@ class HomepageView: SwipableTabVC, UIPickerViewDelegate, UIPickerViewDataSource 
         dateInput.inputView = datePicker
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
-        let strDate = dateFormatter.string(from: self.datePicker.date)
+
 
     }
     

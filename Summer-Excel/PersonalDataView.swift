@@ -57,6 +57,7 @@ class PersonalDataView: SwipableTabVC {
         //casts the buttons to usable variables
        let theseMiles = Double(milesButton.text!)
        let theseMinutes = Int(timeButton.text!)
+        //fatal error if done is pressed with a time of 0:00
        let thisTime = Time(min: theseMinutes!)
        let theseNotes = noteSection.text
        
